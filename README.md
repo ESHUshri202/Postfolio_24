@@ -1,3 +1,11 @@
+Portfolio Sample 
+
+![Screenshot 2024-08-18 220510](https://github.com/user-attachments/assets/f3187b40-b425-473b-9214-5ee794684a71)
+
+Technolgies used 
+* React Js
+* Frame motion
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
