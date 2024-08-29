@@ -70,7 +70,7 @@ export const PROJECTS = [
 ];
 
 export const CONTACT = {
-  address: "Dehradun, Uttrakhand",
-  phoneNo: "+91-9557606319",
+  address: "Gorakhpur, Uttar Pradesh",
+  phoneNo: "+91-9695047580",
   email: "achintyashri2202@gmail.com",
 };
