@@ -70,7 +70,7 @@ export const PROJECTS = [
 ];
 
 export const CONTACT = {
-  address: "Gorakhpur, Uttar Pradesh",
+  address: "Noida, Uttar Pradesh",
   phoneNo: "+91-9695047580",
   email: "achintyashri2202@gmail.com",
 };
