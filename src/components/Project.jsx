@@ -28,10 +28,10 @@ const Project = () => {
             className="w-full lg:w-1/4"
           >
             <img
-              src="/src/assests/projects/project-1.jpg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZNy7J6qEvprld4BAgellLyQdlBvAqaaOLkA&s"
               width={150}
               height={150}
-              alt="project1"
+              alt="project2"
               className="mb-6 rounder"
             />
           </motion.div>
@@ -75,7 +75,7 @@ const Project = () => {
               src="/src/assets/projects/project-3.jpg"
               width={150}
               height={150}
-              alt="project1"
+              alt="project2"
               className="mb-6 rounder"
             />
           </motion.div>
@@ -111,7 +111,7 @@ const Project = () => {
               src="/src/assets/projects/project-4.jpg"
               width={150}
               height={150}
-              alt="project1"
+              alt="project4"
               className="mb-6 rounder"
             />
           </motion.div>
