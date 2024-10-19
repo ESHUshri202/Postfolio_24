@@ -14,7 +14,7 @@ const About = () => {
             transition ={{duration: 0.5}}
             className="w-full lg:w-1/2 lg:p-8">
                 <div className="flex items-center justify-center">
-                    <img src={aboutImage} alt="about"/>
+                    <img src={aboutImage} className="rounded-full h-62 w-62" alt="about"/>
                 </div>
             </motion.div>
             <motion.div 
@@ -26,7 +26,7 @@ const About = () => {
                         <p className="my-2 max-w-xl py-6 ">{ABOUT_TEXT}</p>
                     </div>
                     <motion.div>
-                        <a href="https://mega.nz/file/HFpESBTI#tT6J4YnIGy7mk-2RT-YQU8eScvj5bSekJLq-X97Eh64">
+                        <a href="https://mega.nz/file/jIIxmaIT#QgdG6fPCcZj7IsiqHsjiBIu3MOAWAoJsMxGRYGyqcvg">
                             <button className="border rounded-2xl my-2 max-w-xl py-6 px-6 bg-slate-400 text-black">
                                 Download Resume
                             </button>

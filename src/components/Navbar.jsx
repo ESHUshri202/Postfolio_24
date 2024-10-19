@@ -7,8 +7,17 @@ const Navbar = () => {
   return (
     <nav className="mb-20 flex items-center justify-between py-6">
         <div className="flex flex-shrink-0 items-center">
-            <img className="mx-2 w-10 " src={logo} alt="logo"></img>
+            <a href="#"><img className="mx-2 w-16 " src={logo} alt="logo"></img></a>
         </div>
+        {/* <div>
+          <ul className="flex justify-center gap-5 text-xl">
+            <li>Home</li>
+            <li>About</li>
+            <li>Technologies</li>
+            <li>Projects</li>
+            <li>Contact Us</li>
+          </ul>
+        </div> */}
         <div className="m-8 flex items-center justify-center gap-4 text-2xl">
             <a href="https://www.linkedin.com/in/achintya-shrivastava-7510a519b/"><FaLinkedin/></a>
             <a href="https://github.com/ESHUshri202"><FaGit/></a>
