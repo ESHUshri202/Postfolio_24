@@ -33,7 +33,7 @@ const Project = () => {
                     className="w-full lg:w-1/4"
                   >
                     <img
-                      src="/src/assets/projects/project-1.jpg"
+                      src="https://wisdomml.in/wp-content/uploads/2023/03/pexels-alena-shekhovtcova-6074963.jpg"
                       width={150}
                       height={150}
                       alt="project1"
@@ -77,7 +77,7 @@ const Project = () => {
                     className="w-full lg:w-1/4"
                   >
                     <img
-                      src="/src/assets/projects/project-3.jpg"
+                      src="https://www.lystloc.com/blog/wp-content/uploads/2022/11/ezgif.com-gif-maker-6.webp"
                       width={150}
                       height={150}
                       alt="project1"
@@ -113,7 +113,7 @@ const Project = () => {
                     className="w-full lg:w-1/4"
                   >
                     <img
-                      src="/src/assets/projects/project-4.jpg"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJoXBM-KCNaUsn_BRgQcE_Bw2jf4eP7o3Nnw&s"
                       width={150}
                       height={150}
                       alt="project1"
