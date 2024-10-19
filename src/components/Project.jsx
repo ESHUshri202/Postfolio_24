@@ -206,7 +206,7 @@ const Project = () => {
                     className="w-full lg:w-1/4"
                   >
                     <img
-                      src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FNetflix&psig=AOvVaw30w1r6Gwk-8XeYk4ZCNHgY&ust=1729408011841000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJCB0YHxmYkDFQAAAAAdAAAAABAE"
+                      src="https://cdn.dribbble.com/userupload/15467390/file/original-238665e20e8b05fbdad4e354afaba9e1.jpg?resize=1200x715"
                       width={150}
                       height={150}
                       alt="project2"
