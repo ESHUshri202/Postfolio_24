@@ -166,7 +166,7 @@ const Project = () => {
                     className="w-full lg:w-1/4"
                   >
                     <img
-                      src="https://cdn.dribbble.com/userupload/15920186/file/original-a7e12c52030aa6d496f7e921dcea91f9.png?resize=752x"
+                      src="https://cdn.dribbble.com/userupload/15920186/file/original-a7e12c52030aa6d496f7e921dcea91f9.png?resize=1200x900"
                       width={150}
                       height={150}
                       alt="project1"
@@ -242,8 +242,8 @@ const Project = () => {
                     </span>
                   </motion.div>
                 </div>
-                {/* <div className="mb-8 flex flex-wrap lg:justify-center">
-                  <motion.div
+                <div className="mb-8 flex flex-wrap lg:justify-center">
+                  {/* <motion.div
                     whileInView={{ opacity: 1, x: 0 }}
                     initial={{ opacity: 0, x: -100 }}
                     transition={{ duration: 1 }}
@@ -281,7 +281,7 @@ const Project = () => {
                       Streamlit
                     </span>
                   </motion.div> */}
-                </div>
+                </div> 
               </div>
           </div>
         </div>
