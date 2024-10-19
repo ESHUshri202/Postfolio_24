@@ -7,7 +7,11 @@ const Navbar = () => {
   return (
     <nav className="mb-20 flex items-center justify-between py-6">
         <div className="flex flex-shrink-0 items-center">
+<<<<<<< HEAD
             <a href="#"><img className="mx-2 w-16 " src={logo} alt="logo"></img></a>
+=======
+            <img className="mx-2 w-10 pointer" src={logo} alt="logo"></img>
+>>>>>>> 6f27e736131ede3f0004b2a252e3ab77394c205d
         </div>
         {/* <div>
           <ul className="flex justify-center gap-5 text-xl">
