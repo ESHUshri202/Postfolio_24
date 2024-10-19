@@ -166,7 +166,7 @@ const Project = () => {
                     className="w-full lg:w-1/4"
                   >
                     <img
-                      src="/src/assets/projects/project-1.jpg"
+                      src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2Freact%2Fcomments%2F1eaapos%2Fi_created_google_gemini_clone_using_react%2F&psig=AOvVaw3fbcpjAjLSBZLcoGINcVtT&ust=1729408151461000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLCuocfxmYkDFQAAAAAdAAAAABAE"
                       width={150}
                       height={150}
                       alt="project1"
@@ -209,7 +209,7 @@ const Project = () => {
                       src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FNetflix&psig=AOvVaw30w1r6Gwk-8XeYk4ZCNHgY&ust=1729408011841000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJCB0YHxmYkDFQAAAAAdAAAAABAE"
                       width={150}
                       height={150}
-                      alt="project1"
+                      alt="project2"
                       className="mb-6 rounder"
                     />
                   </motion.div>
