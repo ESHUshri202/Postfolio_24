@@ -166,7 +166,7 @@ const Project = () => {
                     className="w-full lg:w-1/4"
                   >
                     <img
-                      src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2Freact%2Fcomments%2F1eaapos%2Fi_created_google_gemini_clone_using_react%2F&psig=AOvVaw3fbcpjAjLSBZLcoGINcVtT&ust=1729408151461000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLCuocfxmYkDFQAAAAAdAAAAABAE"
+                      src="https://cdn.dribbble.com/userupload/15920186/file/original-a7e12c52030aa6d496f7e921dcea91f9.png?resize=752x"
                       width={150}
                       height={150}
                       alt="project1"
@@ -179,7 +179,7 @@ const Project = () => {
                     transition={{ duration: 1 }}
                     className="w-full max-w-xl lg:w-3/4"
                   >
-                    <a href="https://github.com/ESHUshri202/Medical_Recommendation_System">
+                    <a href="https://github.com/ESHUshri202/Mamba-AI">
                       <h6 className="mb-2 font-semibold">
                         Mamba AI
                       </h6>
@@ -219,7 +219,7 @@ const Project = () => {
                     transition={{ duration: 1 }}
                     className="w-full max-w-xl lg:w-3/4"
                   >
-                    <a href="https://github.com/ESHUshri202/Face-Recognition-Based-Smart-Attendance-System">
+                    <a href="https://netflix-clone-beta-rust.vercel.app/">
                       <h6 className="mb-2 font-semibold">
                         Netflix Clone
                       </h6>
@@ -242,7 +242,7 @@ const Project = () => {
                     </span>
                   </motion.div>
                 </div>
-                <div className="mb-8 flex flex-wrap lg:justify-center">
+                {/* <div className="mb-8 flex flex-wrap lg:justify-center">
                   <motion.div
                     whileInView={{ opacity: 1, x: 0 }}
                     initial={{ opacity: 0, x: -100 }}
@@ -256,7 +256,7 @@ const Project = () => {
                       alt="project1"
                       className="mb-6 rounder"
                     />
-                  </motion.div>
+                  </motion.div> */}
                   {/* <motion.div
                     whileInView={{ opacity: 1, x: 0 }}
                     initial={{ opacity: 0, x: 100 }}
