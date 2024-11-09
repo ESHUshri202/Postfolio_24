@@ -31,7 +31,22 @@ const Technologies = () => {
         whileInView={{opacity:1 , y:0}}
         initial={{opacity:0, y:-100}}
         transition={{duration: 1}}
-        className="my-20 text-center text-4xl">Technologies</motion.h2>
+        className="my-12 text-center text-5xl">Technologies</motion.h2>
+        <motion.div 
+            whileInView={{opacity:1 , y:0}}
+            initial={{opacity:0, y:-100}}
+            transition={{duration: 1}}
+            className="flex flex-wrap justify-center items-center"
+            >
+            <span className="border-4 rounded-full border-blue-500 m-2 w-1 "></span>
+            <span className="border-4 rounded-full border-blue-500 m-2 w-2"></span>
+            <span className="border-4 rounded-full border-blue-500 m-2 w-4 "></span>
+            <span className="border-4 rounded-full border-blue-500 m-2 w-8 "></span>
+            <span className="border-4 rounded-full border-blue-500 m-2 w-8 "></span>
+            <span className="border-4 rounded-full border-blue-500 m-2 w-4"></span>
+            <span className="border-4 rounded-full border-blue-500 m-2 w-2"></span>
+            <span className="border-4 rounded-full border-blue-500 m-2 w-1 "></span>
+        </motion.div>
         <motion.h3 
         whileInView={{opacity:1 , y:0}}
         initial={{opacity:0, y:-100}}

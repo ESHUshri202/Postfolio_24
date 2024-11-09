@@ -1,20 +1,42 @@
 import aboutImage from "../assets/about.jpg"
 import { ABOUT_TEXT } from "../constants"
 import { motion } from "framer-motion"
+import profilePic from "../assets/photo.jpg";
 const About = () => {
   return (
-    <div className="border-b border-neutral-900 pb-4 ">
-        <h2 className="my-20 text-center text-4xl">
-        About
-        <span className="text-neutral-500 "> Me</span></h2>
-        <div className="flex flex-wrap">
+    <div className="border-b border-neutral-900 pb-2 ">
+        <motion.div
+            whileInView={{opacity:1 , y:0}}
+            initial={{opacity:0, y:-100}}
+            transition={{duration: 1}}
+        >
+            <h2 className="my-10 text-center text-5xl">
+            About
+            <span className="text-neutral-500 "> Me</span></h2>
+        </motion.div>
+        <motion.div 
+            whileInView={{opacity:1 , y:0}}
+            initial={{opacity:0, y:-100}}
+            transition={{duration: 1}}
+            className="flex flex-wrap justify-center items-center"
+            >
+            <span className="border-4 rounded-full border-blue-500 m-2 w-1 "></span>
+            <span className="border-4 rounded-full border-blue-500 m-2 w-2"></span>
+            <span className="border-4 rounded-full border-blue-500 m-2 w-4 "></span>
+            <span className="border-4 rounded-full border-blue-500 m-2 w-8 "></span>
+            <span className="border-4 rounded-full border-blue-500 m-2 w-8 "></span>
+            <span className="border-4 rounded-full border-blue-500 m-2 w-4"></span>
+            <span className="border-4 rounded-full border-blue-500 m-2 w-2"></span>
+            <span className="border-4 rounded-full border-blue-500 m-2 w-1 "></span>
+        </motion.div>
+        <div className="flex flex-wrap justify-center items-center">
             <motion.div 
             whileInView={{opacity: 1, x: 0}}
             initial={{opacity: 0 , x: -100}}
             transition ={{duration: 0.5}}
             className="w-full lg:w-1/2 lg:p-8">
                 <div className="flex items-center justify-center">
-                    <img src={aboutImage} className="rounded-full h-62 w-62" alt="about"/>
+                    <img src={profilePic} className="rounded-full h-62 w-62" alt="about"/>
                 </div>
             </motion.div>
             <motion.div 
