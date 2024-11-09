@@ -100,7 +100,7 @@ const Project = () => {
               <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
                 <img
                   className="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform group-hover:scale-110"
-                  src="https://s3-alpha.figma.com/hub/file/5401068013/ac9e79a5-535e-431a-8c2f-3924780c3761-cover.png"
+                  src="https://s3-alpha.figma.com/hub/file/6090747941/acb2e473-5d7c-434d-9782-9a2110830fc5-cover.png"
                   alt="investment-seed-round"
                 />
               </div>
@@ -143,7 +143,7 @@ const Project = () => {
               <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
                 <img
                   className="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform group-hover:scale-110"
-                  src="https://s3-alpha.figma.com/hub/file/5401068013/ac9e79a5-535e-431a-8c2f-3924780c3761-cover.png"
+                  src="https://lnpuk.com/wp-content/uploads/2020/10/LNP-Banner-images-1800-x-1125-6-3-1024x640.jpg"
                   alt="investment-seed-round"
                 />
               </div>
@@ -214,7 +214,7 @@ const Project = () => {
                 </span>
               </div>
               <div className="px-4 pb-4 pt-0 mt-2">
-                <Link to="#">
+                <Link to="https://company-x-demo.vercel.app/">
                   <button
                     className="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                     type="button"
