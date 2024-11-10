@@ -7,7 +7,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="mb-16 flex items-center justify-evenly gap-44 py-6">
+    <nav className="mb-14 flex items-center justify-evenly gap-44 py-4 bg-gradient-to-b from-slate-900 via-zinc-900 to-purple-900 rounded-b-2xl">
         <div className="flex flex-shrink-0 items-center">
             <Link href="#"><img className="mx-2 w-16" src={logo} alt="logo"></img></Link>
         </div>
