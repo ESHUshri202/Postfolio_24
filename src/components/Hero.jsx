@@ -96,17 +96,17 @@ const Hero = () => {
         </div>
       </div>
       {/* About  */}
-      <div className="border-b border-neutral-900 pb-2 ">
+      <div className="border-b border-neutral-900 pb-2">
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -100 }}
           transition={{ duration: 1 }}
         >
           <h2 className="my-10 text-center text-5xl">
-            About
-            <span className="text-neutral-500 "> Me</span>
+            About <span className="text-neutral-500">Me</span>
           </h2>
         </motion.div>
+        
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -100 }}
@@ -122,7 +122,8 @@ const Hero = () => {
           <span className="border-4 rounded-full border-blue-500 m-2 w-2"></span>
           <span className="border-4 rounded-full border-blue-500 m-2 w-1 "></span>
         </motion.div>
-        <div className="flex flex-wrap justify-center items-center">
+
+        <div className="flex flex-col lg:flex-row justify-center items-center">
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -100 }}
@@ -132,23 +133,24 @@ const Hero = () => {
             <div className="flex items-center justify-center">
               <img
                 src={profilePic}
-                className="rounded-full h-62 w-62"
+                className="rounded-full h-72 w-72 md:h-full md:w-full lg:h-62 lg:w-62"
                 alt="about"
               />
             </div>
           </motion.div>
+
           <motion.div
-            whileInView={{ opacity: 1, w: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 100 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="w-full lg:w-1/2"
+            className="w-full lg:w-1/2 p-4"
           >
             <div className="flex justify-center lg:justify-start">
-              <p className="my-2 max-w-xl py-6 ">{ABOUT_TEXT}</p>
+              <p className="my-2 max-w-xl py-6">{ABOUT_TEXT}</p>
             </div>
             <motion.div>
               <a href="https://mega.nz/file/jIIxmaIT#QgdG6fPCcZj7IsiqHsjiBIu3MOAWAoJsMxGRYGyqcvg">
-                <button className="border rounded-2xl my-2 max-w-xl py-6 px-6 bg-slate-400 text-black">
+                <button className="border rounded-2xl my-2 max-w-xl py-4 px-6 bg-slate-400 text-black">
                   Download Resume
                 </button>
               </a>
@@ -303,16 +305,16 @@ const Hero = () => {
         </div>
       </div>
       {/* Project */}
-      <div className="px-24 gap-2">
+      <div className="px-4 sm:px-24 gap-2">
         <div className="border-b border-neutral-900 pb-3 ">
-          <motion.h2
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: -100 }}
-            transition={{ duration: 1 }}
-            className="my-10 text-center text-5xl"
-          >
-            Projects
-          </motion.h2>
+        <motion.h2
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -100 }}
+          transition={{ duration: 1 }}
+          className="my-10 text-center text-4xl sm:text-5xl"
+        >
+          Projects
+        </motion.h2>
           <motion.div
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: -100 }}
@@ -332,9 +334,9 @@ const Hero = () => {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -100 }}
             transition={{ duration: 1 }}
-            className="grid grid-cols-3 items-center justify-between gap-10"
+            className="grid grid-cols-1 sm:grid-cols-3 sm:grid-cols-3 items-center justify-between gap-4 sm:gap-10"
           >
-            <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96 hover:shadow-lg transition-shadow duration-300">
+            <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full sm:w-96 hover:shadow-lg transition-shadow duration-300">
               <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
                 <img
                   className="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform group-hover:scale-110"
@@ -343,7 +345,7 @@ const Hero = () => {
                 />
               </div>
               <div className="p-4">
-                <h6 className="mb-2 text-slate-800 text-xl font-semibold">
+                <h6 className="mb-2 text-slate-800 text-lg sm:text-xl font-semibold">
                   Parkison-Disease-Detection
                 </h6>
                 <p className="text-slate-600 leading-normal font-light">
@@ -376,7 +378,7 @@ const Hero = () => {
                 </Link>
               </div>
             </div>
-            <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96 hover:shadow-lg transition-shadow duration-300">
+            <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full sm:w-96 hover:shadow-lg transition-shadow duration-300">
               <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
                 <img
                   className="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform group-hover:scale-110"
@@ -418,7 +420,7 @@ const Hero = () => {
                 </Link>
               </div>
             </div>
-            <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96 hover:shadow-lg transition-shadow duration-300">
+            <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full sm:w-96 hover:shadow-lg transition-shadow duration-300">
               <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
                 <img
                   className="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform group-hover:scale-110"
@@ -462,13 +464,13 @@ const Hero = () => {
             </div>
           </motion.div>
           {/* Repositories */}
-          <div className="px-24 gap-2">
+          <div className="px-4 sm:px-24 gap-2">
             <div className="border-b border-neutral-900 pb-3 ">
               <motion.h2
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: -100 }}
                 transition={{ duration: 1 }}
-                className="my-10 text-center text-5xl"
+                className="my-10 text-center text-4xl sm:text-5xl"
               >
                 Github Insights
               </motion.h2>
@@ -477,11 +479,11 @@ const Hero = () => {
                 initial={{ opacity: 0, x: -100 }}
                 transition={{ duration: 1 }}
               >
-                <div className="flex justify-between items-center p-12">
-                  <div className="text-3xl">
+                <div className="flex flex-col sm:flex-row justify-between items-center p-6 sm:p-12">
+                  <div className="text-2xl sm:text-3xl mb-4 sm:mb-0">
                     Repositories: {data.public_repos}
                   </div>
-                  <div className="text-3xl">
+                  <div className="text-2xl sm:text-3xl">
                     Followers: {data.followers}
                   </div>
                 </div>
