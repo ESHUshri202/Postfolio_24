@@ -51,7 +51,7 @@ const Project = () => {
           <option>Data Analysis</option>
         </select>
         {selected == "All" ? (
-          <div className="grid grid-cols-3 place-items-center gap-10">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 place-items-center gap-10">
             {/* Medical Recommendation System */}
             <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96 hover:shadow-lg transition-shadow duration-300">
               <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
@@ -520,7 +520,7 @@ const Project = () => {
           ""
         )}
         {selected == "Front-End Development" ? (
-          <div className="grid grid-cols-3 place-items-center gap-10 ">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 place-items-center gap-10">
             {/* Feast of Flavours */}
             <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96 hover:shadow-lg transition-shadow duration-300">
               <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
@@ -742,7 +742,7 @@ const Project = () => {
           ""
         )}
         {selected == "Machine Learning" ? (
-          <div className="grid grid-cols-3 place-items-center gap-10">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 place-items-center gap-10">
             {/* Dog and Cat Classification */}
             <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96 hover:shadow-lg transition-shadow duration-300">
               <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
@@ -958,7 +958,7 @@ const Project = () => {
           ""
         )}
         {selected == "Data Analysis" ? (
-          <div className="grid grid-cols-3 place-items-center gap-10 ">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 place-items-center gap-10">
             {/* Corona Survival Dashboard */}
             <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96 hover:shadow-lg transition-shadow duration-300">
               <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
