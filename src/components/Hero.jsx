@@ -149,7 +149,7 @@ const Hero = () => {
               <p className="my-2 max-w-xl py-6">{ABOUT_TEXT}</p>
             </div>
             <motion.div>
-              <a href="https://mega.nz/file/jIIxmaIT#QgdG6fPCcZj7IsiqHsjiBIu3MOAWAoJsMxGRYGyqcvg">
+              <a href="https://drive.google.com/file/d/15712rrybcFkCTqWfjkEzAaHiHQGDH4Jm/view?usp=sharing">
                 <button className="border rounded-2xl my-2 max-w-xl py-4 px-6 bg-slate-400 text-black">
                   Download Resume
                 </button>
