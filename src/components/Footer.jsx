@@ -5,7 +5,7 @@ import { ImGithub, ImInstagram, ImLinkedin } from "react-icons/im";
 const Footer = () => {
   return (
     <footer className="footer footer-center bg-base-200 text-base-content rounded p-10 bg-gradient-to-b from-slate-900 via-zinc-900 to-purple-900 rounded-t-2xl">
-      <nav className="flex items-center justify-center gap-7 text-lg">
+      <nav className="flex flex-col sm:flex-row items-center justify-center gap-7 text-lg">
         <Link to="/" className="link link-hover">Home</Link>
         <Link to="/about" className="link link-hover">About</Link>
         <Link to="/technologies" className="link link-hover">Technology</Link>
@@ -25,7 +25,7 @@ const Footer = () => {
           </Link>
         </div>
       </nav>
-      <aside className="flex items-bottom justify-center">
+      <aside className="flex items-bottom justify-center mt-9 mb-none text-center">
         <p>
           Copyright © {new Date().getFullYear()} - All right reserved by achintya_shrivastava
         </p>
