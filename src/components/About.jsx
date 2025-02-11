@@ -271,7 +271,7 @@ const About = () => {
     >
       {publications.map((publication, index) => (
         <motion.div
-          key={index}
+          key={index} 
           className="relative bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl"
         >
           <div className="p-4">
@@ -283,7 +283,7 @@ const About = () => {
             </p> */}
           </div>
           <div className="absolute inset-0 bg-gray-800 bg-opacity-0 hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center text-white text-lg opacity-0 hover:opacity-100">
-            {/* <p>Click for more details</p> */}
+            {/* <p>r more details</p> */}
           </div>
         </motion.div>
       ))}
