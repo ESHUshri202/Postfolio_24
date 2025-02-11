@@ -334,7 +334,7 @@ const Hero = () => {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -100 }}
             transition={{ duration: 1 }}
-            className="grid grid-cols-1 sm:grid-cols-3 sm:grid-cols-3 items-center justify-between gap-4 sm:gap-10"
+            className="grid grid-cols-1 sm:grid-cols-3 sm:grid-cols-3 items-center justify-around gap-6 sm:gap-12"
           >
             <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full sm:w-96 hover:shadow-lg transition-shadow duration-300">
               <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
