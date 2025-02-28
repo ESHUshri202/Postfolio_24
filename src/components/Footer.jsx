@@ -14,13 +14,13 @@ const Footer = () => {
       </nav>
       <nav>
         <div className="flex items-center justify-center gap-10 p-10">
-          <Link>
+          <Link to='https://github.com/ESHUshri202'>
             <ImGithub className="text-2xl text-gray-400" />
           </Link>
-          <Link>
+          <Link to='https://www.linkedin.com/in/achintya-shrivastava-7510a519b/'>
             <ImLinkedin className="text-2xl text-blue-600" />
           </Link>
-          <Link>
+          <Link to='https://www.instagram.com/reddevil_achintya/?utm_source=ig_web_button_share_sheet'>
             <ImInstagram className="text-2xl text-pink-700 " />
           </Link>
         </div>
