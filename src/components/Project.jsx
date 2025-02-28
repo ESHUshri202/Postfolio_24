@@ -43,13 +43,14 @@ const Project = () => {
           id=""
           value={selected}
           onChange={(e) => handleSelect(e)}
-          className="p-3 bg-blue-900 rounded-full m-16"
+          className="p-4 m-4 bg-blue-900 text-white rounded-full m-4 shadow-lg transition-all duration-300 ease-in-out hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
         >
-          <option >All</option>
-          <option>Front-End Development</option>
-          <option>Machine Learning</option>
-          <option>Data Analysis</option>
+          <option className="bg-white text-black">All</option>
+          <option className="bg-white text-black">Front-End Development</option>
+          <option className="bg-white text-black">Machine Learning</option>
+          <option className="bg-white text-black">Data Analysis</option>
         </select>
+
         {selected == "All" ? (
           <div className="grid sm:grid-cols-2 md:grid-cols-3 place-items-center gap-10">
             {/* Medical Recommendation System */}
@@ -457,6 +458,104 @@ const Project = () => {
                   vaccination rates. It provides real-time insights through
                   interactive charts, helping users track trends and make
                   informed decisions based on up-to-date information.
+                </p>
+              </div>
+              <div className="flex px-4 pt-0">
+                <span className="mr-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-white">
+                  Power BI
+                </span>
+              </div>
+              <div className="px-4 pb-4 pt-0 mt-2">
+                <Link to="#">
+                  <button
+                    className="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                    type="button"
+                  >
+                    Project Link
+                  </button>
+                </Link>
+              </div>
+            </div>
+            {/* Indian Oil Corporation Report Analysis */}
+            <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96 hover:shadow-lg transition-shadow duration-300">
+              <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
+                <img
+                  className="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform group-hover:scale-110"
+                  src="https://media.licdn.com/dms/image/v2/D5622AQHwjhHWcfLchw/feedshare-shrink_800/feedshare-shrink_800/0/1733425518066?e=1743638400&v=beta&t=ZxU7zvvtaE_fCa9-9VVrNt9jXwTAodtde-NkDBqc5cs"
+                  alt="investment-seed-round"
+                />
+              </div>
+              <div className="p-4">
+                <h6 className="mb-2 text-slate-800 text-xl font-semibold">
+                  Indian Oil Corporation Report Dashboard
+                </h6>
+                <p className="text-slate-600 leading-normal font-light">
+                  A comprehensive analysis of Indian Oil Corporations share price trends over time. It visualizes key metrics like open, close, high, and low prices, alongside adjusted close prices and trading volumes. It helps investors track performance and market trends.
+                </p>
+              </div>
+              <div className="flex px-4 pt-0">
+                <span className="mr-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-white">
+                  Power BI
+                </span>
+              </div>
+              <div className="px-4 pb-4 pt-0 mt-2">
+                <Link to="#">
+                  <button
+                    className="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                    type="button"
+                  >
+                    Project Link
+                  </button>
+                </Link>
+              </div>
+            </div>
+            {/* Project Management Report Dashboard */}
+            <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96 hover:shadow-lg transition-shadow duration-300">
+              <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
+                <img
+                  className="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform group-hover:scale-110"
+                  src="https://media.licdn.com/dms/image/v2/D5622AQHwpZ_f4ekD6g/feedshare-shrink_800/feedshare-shrink_800/0/1733486566460?e=1743638400&v=beta&t=ll88GojZbns8cDgXE69qh-S0oXfJpFWsBblo5CgcRtw"
+                  alt="project-management-report-dashboard"
+                />
+              </div>
+              <div className="p-4">
+                <h6 className="mb-2 text-slate-800 text-xl font-semibold">
+                  Project Management Report Dashboard
+                </h6>
+                <p className="text-slate-600 leading-normal font-light">
+                  A comprehensive Power BI dashboard designed to monitor and analyze project performance across multiple dimensions. This dashboard provides actionable insights into key project metrics, empowering data-driven decision-making.
+                </p>
+              </div>
+              <div className="flex px-4 pt-0">
+                <span className="mr-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-white">
+                  Power BI
+                </span>
+              </div>
+              <div className="px-4 pb-4 pt-0 mt-2">
+                <Link to="#">
+                  <button
+                    className="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                    type="button"
+                  >
+                    Project Link
+                  </button>
+                </Link>
+              </div>
+            </div>
+            <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96 hover:shadow-lg transition-shadow duration-300">
+              <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
+                <img
+                  className="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform group-hover:scale-110"
+                  src="https://media.licdn.com/dms/image/v2/D5622AQGtCC70ldBo2g/feedshare-shrink_800/B56ZT2BLLtGUAg-/0/1739294292873?e=1743638400&v=beta&t=w_7ZNAFMuzpVWwWGADj3Pso_mNtOCZgv3O_qz3T_7Fw"
+                  alt="project-management-report-dashboard"
+                />
+              </div>
+              <div className="p-4">
+                <h6 className="mb-2 text-slate-800 text-xl font-semibold">
+                  North Sea Export Sales Report (2010 - 2013) Dashboard
+                </h6>
+                <p className="text-slate-600 leading-normal font-light">
+                  The North Sea Export Sales Report (2010–2013) reveals $9.30M in sales, $8.97M in costs, and $120.61K in losses. Sales varied across regions, with furniture having the highest loss. Technology led in sales after discounts.
                 </p>
               </div>
               <div className="flex px-4 pt-0">
@@ -996,7 +1095,106 @@ const Project = () => {
                 </Link>
               </div>
             </div>
+            {/* Indian Oil Corporation Report Analysis */}
+            <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96 hover:shadow-lg transition-shadow duration-300">
+              <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
+                <img
+                  className="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform group-hover:scale-110"
+                  src="https://media.licdn.com/dms/image/v2/D5622AQHwjhHWcfLchw/feedshare-shrink_800/feedshare-shrink_800/0/1733425518066?e=1743638400&v=beta&t=ZxU7zvvtaE_fCa9-9VVrNt9jXwTAodtde-NkDBqc5cs"
+                  alt="investment-seed-round"
+                />
+              </div>
+              <div className="p-4">
+                <h6 className="mb-2 text-slate-800 text-xl font-semibold">
+                  Indian Oil Corporation Report Dashboard
+                </h6>
+                <p className="text-slate-600 leading-normal font-light">
+                  A comprehensive analysis of Indian Oil Corporations share price trends over time. It visualizes key metrics like open, close, high, and low prices, alongside adjusted close prices and trading volumes. It helps investors track performance and market trends.
+                </p>
+              </div>
+              <div className="flex px-4 pt-0">
+                <span className="mr-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-white">
+                  Power BI
+                </span>
+              </div>
+              <div className="px-4 pb-4 pt-0 mt-2">
+                <Link to="#">
+                  <button
+                    className="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                    type="button"
+                  >
+                    Project Link
+                  </button>
+                </Link>
+              </div>
+            </div>
+            {/* Project Management Report Dashboard */}
+            <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96 hover:shadow-lg transition-shadow duration-300">
+              <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
+                <img
+                  className="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform group-hover:scale-110"
+                  src="https://media.licdn.com/dms/image/v2/D5622AQHwpZ_f4ekD6g/feedshare-shrink_800/feedshare-shrink_800/0/1733486566460?e=1743638400&v=beta&t=ll88GojZbns8cDgXE69qh-S0oXfJpFWsBblo5CgcRtw"
+                  alt="project-management-report-dashboard"
+                />
+              </div>
+              <div className="p-4">
+                <h6 className="mb-2 text-slate-800 text-xl font-semibold">
+                  Project Management Report Dashboard
+                </h6>
+                <p className="text-slate-600 leading-normal font-light">
+                  A comprehensive Power BI dashboard designed to monitor and analyze project performance across multiple dimensions. This dashboard provides actionable insights into key project metrics, empowering data-driven decision-making.
+                </p>
+              </div>
+              <div className="flex px-4 pt-0">
+                <span className="mr-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-white">
+                  Power BI
+                </span>
+              </div>
+              <div className="px-4 pb-4 pt-0 mt-2">
+                <Link to="#">
+                  <button
+                    className="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                    type="button"
+                  >
+                    Project Link
+                  </button>
+                </Link>
+              </div>
+            </div>
+            <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96 hover:shadow-lg transition-shadow duration-300">
+              <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
+                <img
+                  className="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform group-hover:scale-110"
+                  src="https://media.licdn.com/dms/image/v2/D5622AQGtCC70ldBo2g/feedshare-shrink_800/B56ZT2BLLtGUAg-/0/1739294292873?e=1743638400&v=beta&t=w_7ZNAFMuzpVWwWGADj3Pso_mNtOCZgv3O_qz3T_7Fw"
+                  alt="project-management-report-dashboard"
+                />
+              </div>
+              <div className="p-4">
+                <h6 className="mb-2 text-slate-800 text-xl font-semibold">
+                  North Sea Export Sales Report (2010 - 2013) Dashboard
+                </h6>
+                <p className="text-slate-600 leading-normal font-light">
+                  The North Sea Export Sales Report (2010–2013) reveals $9.30M in sales, $8.97M in costs, and $120.61K in losses. Sales varied across regions, with furniture having the highest loss. Technology led in sales after discounts.
+                </p>
+              </div>
+              <div className="flex px-4 pt-0">
+                <span className="mr-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-white">
+                  Power BI
+                </span>
+              </div>
+              <div className="px-4 pb-4 pt-0 mt-2">
+                <Link to="#">
+                  <button
+                    className="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                    type="button"
+                  >
+                    Project Link
+                  </button>
+                </Link>
+              </div>
+            </div>
           </div>
+
         ) : (
           ""
         )}
