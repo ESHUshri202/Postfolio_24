@@ -102,8 +102,8 @@ const About = () => {
             </p>
           </div>
           <motion.div>
-            <a href="https://drive.google.com/file/d/15712rrybcFkCTqWfjkEzAaHiHQGDH4Jm/view?usp=sharing">
-              <button className="border rounded-2xl my-2 max-w-xl py-4 px-6 bg-slate-400 text-black text-sm sm:text-base">
+            <a href="https://drive.google.com/file/d/1hXq1o4KRAwh1_ONKl9MrkVx4U0UUV6ul/view?usp=sharing">
+              <button className="border-none rounded-2xl my-2 max-w-xl py-4 px-6 bg-slate-900 hover:bg-slate-300 hover:text-black duration-100 text-white font-semibold text-sm sm:text-base">
                 Download Resume
               </button>
             </a>
