@@ -26,7 +26,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="mb-14 flex flex-col sm:flex-row items-center justify-between py-4 bg-gradient-to-b from-slate-900 via-zinc-900 to-purple-900 rounded-b-2xl">
+    <nav className="mb-14 flex flex-col sm:flex-row items-center justify-center gap-24 mt-4 mx-56  bg-[#ffff]/10 rounded-2xl">
       <div className="flex flex-shrink-0 items-center">
         <Link to="#">
           <img className="mx-2 w-16" src={logo} alt="logo" />

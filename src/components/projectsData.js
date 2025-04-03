@@ -99,6 +99,13 @@ const projects = [
       techStack: ["Python", "TensorFlow"],
       projectLink: "#"
     },
+    {
+      title: "Medico-Brain Stroke Prediction",
+      details: "The Medico-Brain Stroke Prediction project uses machine learning to analyze patient data and predict the likelihood of a brain stroke. Brain strokes are a leading cause of disability and death worldwide. By examining various health metrics, it aids in early detection and prevention strategies.",
+      image:"https://media-hosting.imagekit.io/73ae32124c4f44b1/Screenshot%202025-04-03%20230533.png?Expires=1838309748&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=neIzOscIj1ztf~3-zF7OTqNcGhgvpfLnb8c4VDqOoUXuTsT6qR9hPquqBDn3oGK9vYTPdt4OOP2AdT5RDiF-d6BXGu8TO1OZm5KgveMSohUW6omFlLoFzPEwIFwcLX31pr8yLBkC4O~yb7c~VxQCephgucq0KGNQEa3YtlVIasIPfBC5Zq3a9Ev8ya82~jmBe2GpJWymeciH076Yb6ANMDYDKPhw-kle6xtddVkmrFCMYqOMO0ALlpDUyFJ2il7gVvdiE1ouLNXb8bEy~0FmOGzrXxZs9RcHt-tnTsyg6vcza-NalwLFanLj115vcqsJcs5vxpGwrC-LSFvXJYCvDQ__",
+      techStack: ["Python", "ML", "Flask", "React Js","Firebase"],
+      projectLink: "https://brain-stroke-prediction-six.vercel.app/"
+    },
   ];
   
   export default projects;

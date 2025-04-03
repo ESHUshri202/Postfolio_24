@@ -17,7 +17,7 @@ const Project = () => {
       return project.techStack.includes("HTML") || project.techStack.includes("CSS") || project.techStack.includes("React Js") || project.techStack.includes("Tailwind CSS");
     }
     if (selected === "Machine Learning") {
-      return project.techStack.includes("Python") && (project.techStack.includes("Machine Learning") || project.techStack.includes("TensorFlow") || project.techStack.includes("Streamlit"));
+      return project.techStack.includes("Python") && (project.techStack.includes("Machine Learning") || project.techStack.includes("TensorFlow") || project.techStack.includes("Streamlit") || project.techStack.includes("Flask") || project.techStack.includes("Django") ) ;
     }
     if (selected === "Data Analysis") {
       return project.techStack.includes("Power BI");

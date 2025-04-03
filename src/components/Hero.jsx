@@ -133,7 +133,7 @@ const Hero = () => {
             <div className="flex items-center justify-center">
               <img
                 src={profilePic}
-                className="rounded-full h-72 w-72 md:h-full md:w-full lg:h-62 lg:w-62"
+                className="backdrop-saturate-50 rounded-full h-72 w-72 md:h-full md:w-full lg:h-62 lg:w-62 "
                 alt="about"
               />
             </div>
