@@ -1,5 +1,5 @@
 import logo from "../assets/kevinRushLogo.png";
-import { FaLinkedin, FaGit, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
 import { IoIosMenu, IoIosClose } from "react-icons/io";
@@ -19,100 +19,72 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
   return (
-    <nav className="mb-14 flex flex-col sm:flex-row items-center justify-center gap-24 mt-4 mx-56  bg-[#ffff]/10 rounded-2xl">
-      <div className="flex flex-shrink-0 items-center">
-        <Link to="#">
-          <img className="mx-2 w-16" src={logo} alt="logo" />
+    <nav className="flex items-center justify-between mt-4 px-6 py-4 bg-[#ffff]/10 shadow-lg rounded-xl mx-4 sm:mx-8 md:mx-12 lg:mx-24">
+      {/* Logo Section */}
+      <div className="flex items-center w-full sm:w-auto justify-between">
+        <Link to="/">
+          <img className="w-12" src={logo} alt="logo" />
         </Link>
-      </div>
-      <div className="relative w-full sm:w-auto">
         <button
           onClick={toggleMenu}
-          className="sm:hidden flex items-center justify-center text-white text-2xl mx-auto"
+          className="sm:hidden text-white text-3xl"
         >
-          {isMenuOpen ? <IoIosClose className="text-center"/> : <IoIosMenu  className="text-center"/>}
+          {isMenuOpen ? <IoIosClose /> : <IoIosMenu />}
         </button>
-        <ul
-          ref={menuRef}
-          className={`grid grid-col-4 sm:flex justify-center gap-4 sm:gap-7 text-xl ${isMenuOpen ? "block" : "hidden"} sm:block`}
-        >
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                `block py-2 pr-4 pl-3 duration-200 
-                ${isActive ? "text-orange-700" : "text-white"}
-                border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-              }
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                `text-white block 
-                ${isActive ? "text-orange-700" : "text-white"}
-                py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-              }
-            >
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/technologies"
-              className={({ isActive }) =>
-                `text-white block 
-                ${isActive ? "text-orange-700" : "text-white"}
-                py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-              }
-            >
-              Technologies
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/project"
-              className={({ isActive }) =>
-                `text-white block 
-                ${isActive ? "text-orange-700" : "text-white"}
-                py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-              }
-            >
-              Project
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/contact"
-              className={({ isActive }) =>
-                `text-white block py-2 pr-4 
-                pl-3 duration-200 
-                ${isActive ? "text-orange-700" : "text-white"}
-                border-b border-gray-100
-                hover:bg-gray-50 
-                lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-              }
-            >
-              Contact Us
-            </NavLink>
-          </li>
-        </ul>
       </div>
-      <div className="m-4 flex items-center justify-center gap-4 text-2xl">
-        <a href="https://www.linkedin.com/in/achintya-shrivastava-7510a519b/"><FaLinkedin /></a>
-        <a href="https://github.com/ESHUshri202"><FaGit /></a>
-        <a href="#"><FaTwitter /></a>
-        <a href="#"><FaInstagram /></a>
+
+      {/* Navigation Links */}
+      <ul
+        ref={menuRef}
+        className={`absolute sm:static top-16 left-0 w-full sm:w-auto bg-black sm:bg-transparent shadow-md sm:shadow-none flex flex-col sm:flex-row items-center gap-4 sm:gap-7 text-lg p-4 sm:p-0 transition-all duration-300 ease-in-out ${isMenuOpen ? "flex" : "hidden"} sm:flex`}
+      >
+        {[{ to: "/", label: "Home" },
+          { to: "/about", label: "About" },
+          { to: "/technologies", label: "Technologies" },
+          { to: "/project", label: "Project" },
+          { to: "/contact", label: "Contact Us" }].map(({ to, label }) => (
+          <li key={to}>
+            <NavLink
+              to={to}
+              className={({ isActive }) =>
+                `block py-2 px-4 text-white rounded-md transition duration-200 ${isActive ? "text-orange-500" : "hover:text-orange-500"}`
+              }
+            >
+              {label}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+
+      {/* Social Icons */}
+      <div className="hidden sm:flex items-center gap-4 text-xl">
+        <a
+          href="https://www.linkedin.com/in/achintya-shrivastava-7510a519b/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaLinkedin className="text-white hover:text-gray-400" />
+        </a>
+        <a
+          href="https://github.com/ESHUshri202"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaGithub className="text-white hover:text-gray-400" />
+        </a>
+        <a href="#">
+          <FaTwitter className="text-white hover:text-gray-400" />
+        </a>
+        <a href="#">
+          <FaInstagram className="text-white hover:text-gray-400" />
+        </a>
       </div>
     </nav>
   );
