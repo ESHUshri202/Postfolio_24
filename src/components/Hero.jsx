@@ -106,7 +106,7 @@ const Hero = () => {
             About <span className="text-neutral-500">Me</span>
           </h2>
         </motion.div>
-        
+
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -100 }}
@@ -307,14 +307,14 @@ const Hero = () => {
       {/* Project */}
       <div className="px-4 sm:px-24 gap-2">
         <div className="border-b border-neutral-900 pb-3 ">
-        <motion.h2
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: -100 }}
-          transition={{ duration: 1 }}
-          className="my-10 text-center text-4xl sm:text-5xl"
-        >
-          Projects
-        </motion.h2>
+          <motion.h2
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: -100 }}
+            transition={{ duration: 1 }}
+            className="my-10 text-center text-4xl sm:text-5xl"
+          >
+            Projects
+          </motion.h2>
           <motion.div
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: -100 }}
@@ -479,11 +479,18 @@ const Hero = () => {
                 initial={{ opacity: 0, x: -100 }}
                 transition={{ duration: 1 }}
               >
-                <div className="flex flex-col sm:flex-row justify-between items-center p-6 sm:p-12">
-                  <div className="text-2xl sm:text-3xl mb-4 sm:mb-0">
+                <div className="flex flex-col md:flex-row justify-between items-center p-4 md:p-8 lg:p-12">
+                  <div className="text-xl md:text-2xl lg:text-3xl mb-4 md:mb-0">
                     Repositories: {data.public_repos}
                   </div>
-                  <div className="text-2xl sm:text-3xl">
+                  <Link href="https://git.io/streak-stats">
+                    <img
+                      src="https://github-readme-streak-stats.herokuapp.com?user=ESHUshri202&theme=dark"
+                      alt="GitHub Streak"
+                      className="w-46 md:w-72 lg:w-full"
+                    />
+                  </Link>
+                  <div className="text-xl md:text-2xl lg:text-3xl">
                     Followers: {data.followers}
                   </div>
                 </div>
