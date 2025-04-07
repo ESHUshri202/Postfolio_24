@@ -9,6 +9,7 @@ import Project from './components/Project.jsx'
 import Contact from './components/Contact.jsx'
 import { createBrowserRouter,createRoutesFromElements,Route,RouterProvider } from 'react-router-dom'
 import Layout from './Layout.jsx'
+import ProjectDetails from './components/ProjectDetails.jsx'
 // const router = createBrowserRouter([
 //   {
 //     path: '/',
@@ -45,6 +46,7 @@ const router = createBrowserRouter(
       <Route path='/technologies' element={<Technologies/>}/>
       <Route path='/project' element={<Project/>}/>
       <Route path='/contact' element={<Contact/>}/>
+      <Route path="/project/:title" element={<ProjectDetails/>}/>
     </Route>
   )
 )
