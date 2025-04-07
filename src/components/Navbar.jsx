@@ -3,6 +3,8 @@ import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
 import { IoIosMenu, IoIosClose } from "react-icons/io";
+import { SiLeetcode } from "react-icons/si";
+import { SiCodechef } from "react-icons/si";
 
 const Navbar = () => {
   const menuRef = useRef();
@@ -54,7 +56,7 @@ const Navbar = () => {
             <NavLink
               to={to}
               className={({ isActive }) =>
-                `block py-2 px-4 text-white rounded-md transition duration-200 ${isActive ? "text-orange-500" : "hover:text-orange-500"}`
+                `block py-2 px-4 text-white rounded-md transition duration-200 ${isActive ? "text-blue-500" : "hover:text-blue-500"}`
               }
             >
               {label}
@@ -79,11 +81,11 @@ const Navbar = () => {
         >
           <FaGithub className="text-white hover:text-gray-400" />
         </a>
-        <a href="#">
-          <FaTwitter className="text-white hover:text-gray-400" />
+        <a href="https://www.codechef.com/users/achintyashri22">
+          <SiCodechef className="text-white hover:text-gray-400" />
         </a>
-        <a href="#">
-          <FaInstagram className="text-white hover:text-gray-400" />
+        <a href="https://leetcode.com/u/achintyashri2202/">
+          <SiLeetcode className="text-white hover:text-gray-400"  />
         </a>
       </div>
     </nav>

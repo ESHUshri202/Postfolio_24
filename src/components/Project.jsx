@@ -52,7 +52,7 @@ const Project = () => {
         <select
           value={selected}
           onChange={handleSelect}
-          className="p-4 m-4 bg-blue-900 text-white rounded-full m-4 shadow-lg transition-all duration-300 ease-in-out hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
+          className="p-4 m-4 bg-blue-950 text-white rounded-full m-4 shadow-lg transition-all duration-300 ease-in-out hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
         >
           <option>All</option>
           <option>Front-End Development</option>

@@ -49,10 +49,10 @@ const Hero = () => {
   }, []);
   return (
     <>
-      <div className="border-b border-neutral-900 pb-4 lg:mb-35">
+      <div className="border-b border-neutral-900 pb-4 pt-6 lg:mb-35">
         <div className="flex flex-wrap">
           <div className="w-full lg:w-1/2">
-            <div className="flex flex-col items-center lg:items-start">
+            <div className="flex flex-col items-center justify-center h-full lg:items-start">
               <motion.h1
                 variants={container(0)}
                 initial="hidden"
@@ -71,14 +71,14 @@ const Hero = () => {
               >
                 Data Analyst || Front-End Developer
               </motion.span>
-              <motion.p
+              {/* <motion.p
                 variants={container(0.75)}
                 initial="hidden"
                 animate="visible"
                 className="my-2 max-w-xl py-6 font-light tracking-tighter"
               >
                 {HERO_CONTENT}
-              </motion.p>
+              </motion.p> */}
             </div>
           </div>
           <div className="w-full lg:w-1/2 lg:p-8 rounded-md">

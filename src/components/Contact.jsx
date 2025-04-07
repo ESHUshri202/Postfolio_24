@@ -39,7 +39,7 @@ const Contact = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center p-6 md:p-12 lg:p-16 gap-6">
       <div className="w-full max-w-xl bg-transparent font-[sans-serif]">
-        <h1 className="text-3xl text-white font-extrabold text-center">Contact Us</h1>
+        <h1 className="text-4xl text-orange-400 font-extrabold font-thin text-center">Contact Us</h1>
         <form className="mt-8 space-y-4" onSubmit={handleSubmit}>
           <input
             type="text"
