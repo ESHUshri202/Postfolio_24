@@ -148,12 +148,17 @@ const Hero = () => {
             <div className="flex justify-center lg:justify-start">
               <p className="my-2 max-w-xl py-6">{ABOUT_TEXT}</p>
             </div>
-            <motion.div>
+            <motion.div className="flex items-center justify-start gap-6">
               <a href="https://drive.google.com/file/d/1hXq1o4KRAwh1_ONKl9MrkVx4U0UUV6ul/view?usp=sharing">
-                <button className="border rounded-2xl my-2 max-w-xl py-4 px-6 bg-slate-900 hover:bg-slate-400 hover:text-black duration-300 text-white font-semibold ">
+                <button className="rounded-2xl my-2 max-w-xl py-4 px-6 bg-blue-900 hover:bg-slate-700 hover:text-black duration-300 text-white font-semibold ">
                   Download Resume
                 </button>
               </a>
+              <Link to="/project">
+                <button className="rounded-2xl my-2 max-w-xl py-4 px-6 bg-blue-900 hover:bg-slate-700 hover:text-black duration-300 text-white font-semibold ">
+                  View Project
+                </button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>

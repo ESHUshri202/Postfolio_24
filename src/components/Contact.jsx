@@ -38,8 +38,8 @@ const Contact = () => {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center p-6 md:p-12 lg:p-16 gap-6">
-      <div className="w-full max-w-xl bg-transparent font-[sans-serif]">
-        <h1 className="text-4xl text-orange-400 font-extrabold font-thin text-center">Contact Us</h1>
+      <div className="w-full max-w-xl bg-[#ffff]/10 p-10 rounded-2xl font-[sans-serif]">
+        <h1 className="text-4xl text-blue-400 font-thin text-center">Contact Us</h1>
         <form className="mt-8 space-y-4" onSubmit={handleSubmit}>
           <input
             type="text"
@@ -94,7 +94,7 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
           className="flex flex-col md:flex-row gap-4 items-center my-4 text-xl md:text-2xl lg:text-3xl"
         >
-          <ImLocation2 className="text-red-600" />
+          <ImLocation2 className="text-white" />
           {CONTACT.address}
         </motion.p>
         <motion.p
@@ -103,7 +103,7 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
           className="flex flex-col md:flex-row gap-4 items-center my-4 text-xl md:text-2xl lg:text-3xl"
         >
-          <PiPhoneCallFill className="text-blue-500" />
+          <PiPhoneCallFill className="text-white" />
           {CONTACT.phoneNo}
         </motion.p>
         <motion.a
@@ -113,7 +113,7 @@ const Contact = () => {
           href={`mailto:${CONTACT.email}`}
           className="flex flex-col md:flex-row gap-4 justify-center md:justify-start items-center text-xl md:text-2xl lg:text-3xl italic"
         >
-          <MdEmail className="text-pink-400" />
+          <MdEmail className="text-white" />
           {CONTACT.email}
         </motion.a>
       </div>
