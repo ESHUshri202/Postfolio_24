@@ -58,11 +58,19 @@ const ProjectDetails = () => {
                     </ol>
                 )}
                 {/* <p className="text-lg mb-6">{project.details}</p> */}
-                
+                {project.analysis  && (
+                    <img src={project.analysis} alt={project.title} className="w-full h-full object-cover rounded-sm mb-6 shadow-xl" />
+                )}
+                {project.trends && (
+                    <div>
+                        <h1 className='text-2xl p-2 mb-4' >💹 Trends </h1>
+                        <span>{project.trends}</span>
+                    </div>
+                )}
                 <h1 className='text-2xl mb-4'>Technologies Used</h1>
                 <div className="grid grid-cols-3 gap-12 mb-6  w-full items-center justify-center">
                     {project.techStack.map((tech) => (
-                        <span key={tech} className=" p-20 text-center  rounded-2xl bg-[#ffff]/10 text-sm border hover:border-orange-500 hover:bg-black h-full">
+                        <span key={tech} className=" p-20 text-center text-2xl text-wrap  rounded-2xl h-full shadow-lg shadow-slate-800 bg-gradient-to-r bg-gradient-to-b from-slate-900 to-indigo-900   hover:bg-gradient-to-r hover:from-red-800 hover:to-blue-800 hover:duration-200 h-full">
                             {tech}
                         </span>
                     ))}

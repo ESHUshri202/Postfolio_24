@@ -136,10 +136,22 @@ const projects = [
   {
     title: "North Sea Export Sales Report (2010 - 2013) Dashboard",
     details: "The North Sea Export Sales Report (2010–2013) reveals $9.30M in sales, $8.97M in costs, and $120.61K in losses. Sales varied across regions, with furniture having the highest loss. Technology led in sales after discounts.",
-    image: "https://media.licdn.com/dms/image/v2/D5622AQGtCC70ldBo2g/feedshare-shrink_800/B56ZT2BLLtGUAg-/0/1739294292873?e=1743638400&v=beta&t=w_7ZNAFMuzpVWwWGADj3Pso_mNtOCZgv3O_qz3T_7Fw",
+    image: "https://gcaptain.com/wp-content/uploads/2016/01/THEO-T-first-US-crude-export.jpg",
+    analysis: "https://media.licdn.com/dms/image/v2/D5622AQGtCC70ldBo2g/feedshare-shrink_800/B56ZT2BLLtGUAg-/0/1739294292873?e=1747267200&v=beta&t=rJzMvz11DgIeFDHpaIbGJDIdPIbmAswMHKy2mKvEqik",
     techStack: ["Power BI"],
+    OverView: "Our latest North Sea Export Sales Report provides a data-driven view of sales, costs, and losses across different regions and product categories from 2010 to 2013.",
+    ListDown: [
+      { id: 1, content: "✅ Total Sales: $9.30M" },
+      { id: 2, content: "✅ Total Cost: $8.97M" },
+      { id: 3, content: "✅ Total Loss: $120.61K (1.34% loss)" },
+      { id: 4, content: "✅ Total Sales After Discount: $8.85M" },
+      { id: 5, content: "✅ Total Orders: 6,455" },
+    ],
+    performance: "🔍 Regional Performance: Sales losses vary across different states and regions, with notable differences between East, West, South, and Central regions.",
+    trends: "📊 Trends Over Time: Sales after discount have seen an upward trend over the years, with a steady increase in order volume. This report provides valuable insights into where improvements can be made to optimize costs, increase sales, and minimize losses.",
     projectLink: "#"
   },
+  
   {
     title: "Dog & Cat Classification",
     details: "Dog & Cat Classification using TensorFlow leverages deep learning models, typically Convolutional Neural Networks (CNNs), to accurately classify images as either dogs or cats. The model is trained on labeled image datasets to recognize distinctive features of each animal.",
