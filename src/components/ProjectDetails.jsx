@@ -1,3 +1,4 @@
+
 import { useParams, Link } from 'react-router-dom';
 import projects from './projectsData';
 import { FaArrowRight } from "react-icons/fa";
@@ -6,6 +7,16 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const recommendations = {
+    React: ["Medical Recommendation System", "Feast of Flavours", "Netflix Clone", "Mamba AI"],
+    Python: ["Medical Recommendation System", "Medico-Brain Stroke Prediction", "Dog & Cat Classification", "Smart Attendance System"],
+    "Machine Learning": ["Medical Recommendation System", "Medico-Brain Stroke Prediction", "Stock Price Prediction Model"],
+    Flask: ["Medical Recommendation System", "Medico-Brain Stroke Prediction"],
+    Django: ["Medical Recommendation System", "Medico-Brain Stroke Prediction"],
+    "Tailwind CSS": ["Feast of Flavours", "Company X Template", "Netflix Clone"],
+    // Add more technologies and their recommendations as needed
+};
 
 const ProjectDetails = () => {
     const { title } = useParams();
@@ -73,21 +84,21 @@ const ProjectDetails = () => {
                     </div>
                 )}
                 <br />
-                <div className='p-2'> 
-                {
-                    project.techStack && (
-                        <>
-                            <h1 className='text-2xl sm:text-3xl mb-4 pt-6 '>Technologies Used</h1>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6 w-full items-center justify-center">
-                                {project.techStack.map((tech) => (
-                                    <span key={tech} className="p-8 text-center flex flex-wrap justify-center text-lg sm:text-2xl rounded-2xl shadow-lg shadow-slate-800 bg-gradient-to-r from-slate-900 to-indigo-900 hover:bg-gradient-to-r hover:from-red-800 hover:to-blue-800 hover:duration-200 h-full">
-                                        {tech}
-                                    </span>
-                                ))}
-                            </div>
-                        </>
-                    )
-                }
+                <div className='p-2'>
+                    {
+                        project.techStack && (
+                            <>
+                                <h1 className='text-2xl sm:text-3xl mb-4 pt-6 '>Technologies Used</h1>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6 w-full items-center justify-center">
+                                    {project.techStack.map((tech) => (
+                                        <span key={tech} className="p-8 text-center flex flex-wrap justify-center text-lg sm:text-2xl rounded-2xl shadow-lg shadow-slate-800 bg-gradient-to-r from-slate-900 to-indigo-900 hover:bg-gradient-to-r hover:from-red-800 hover:to-blue-800 hover:duration-200 h-full">
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                            </>
+                        )
+                    }
                 </div>
                 {project.projectLink !== "#" && (
                     <a
@@ -99,6 +110,26 @@ const ProjectDetails = () => {
                         View Project
                     </a>
                 )}
+                <div className='mt-10'>
+                    <h1 className='text-2xl sm:text-3xl mb-4'>Recommended Projects</h1>
+                    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
+                        {project.techStack && project.techStack.map((tech) => (
+                            recommendations[tech] ? recommendations[tech].map((recommendedProject) => (
+                                <div
+                                    key={recommendedProject}
+                                    className="bg-slate-900 shadow-md rounded-xl p-4 hover:shadow-lg transition"
+                                >
+                                    <Link
+                                        to={`/project/${encodeURIComponent(recommendedProject)}`}
+                                        className="text-lg text-blue-200 flex flex-wrap text-center jutify-center  hover:text-blue-700"
+                                    >
+                                        {recommendedProject}
+                                    </Link>
+                                </div>
+                            )) : null
+                        ))}
+                    </div>
+                </div>
             </div>
         </>
     );
