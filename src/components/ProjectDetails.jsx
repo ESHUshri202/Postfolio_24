@@ -21,21 +21,6 @@ const ProjectDetails = () => {
         );
     }
 
-    // useEffect(() => {
-    //     const animation = gsap.to('h1', {
-    //         x: 200,
-    //         scrollTrigger: {
-    //             trigger: 'h1',
-    //             start: 'top bottom',
-    //             end: 'bottom top',
-    //             scrub: true
-    //         }
-    //     });
-
-    //     return () => {
-    //         animation.kill(); // Cleanup animation on unmount
-    //     };
-    // }, []);
     var count = 1;
     return (
         <>
@@ -45,49 +30,75 @@ const ProjectDetails = () => {
                         <FaArrowRight />
                     </Link>
                 </div>
-                <img src={project.image} alt={project.title} className="w-full h-80 object-cover rounded-xl mb-6 shadow-xl" />
-                <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
-                <h1 className='text-2xl p-2 mb-4'>Overview Of Project</h1>
-                <h2 className='text-blue-500 p-2 mb-4'>{project.OverView}</h2>
+                <img src={project.image} alt={project.title} className="w-full h-60 sm:h-72 md:h-80 object-cover rounded-xl mb-6 shadow-xl" />
+                <h1 className="text-3xl sm:text-4xl font-bold mb-4">{project.title}</h1>
+                <h1 className='text-xl sm:text-2xl p-2 mb-4'>Overview Of Project</h1>
+                <h2 className='p-2 mb-4'>{project.OverView}</h2>
                 {project.ListDown && project.ListDown.length > 0 && (
-                    <ol className='pl-6 mb-4'> 
-                        {project.ListDown.map((id, content) => (
-
-                            <li key={id} className=''><span>{count++}. </span> {id.content}</li>
+                    <ol className='pl-6 mb-4'>
+                        {project.ListDown.map((item, index) => (
+                            <li key={item.id} className=''><span>{count++}. </span> {item.content}</li>
                         ))}
                     </ol>
                 )}
-                {/* <p className="text-lg mb-6">{project.details}</p> */}
-                {project.analysis  && (
-                    <img src={project.analysis} alt={project.title} className="w-full h-full object-cover rounded-sm mb-6 shadow-xl" />
+                {
+                    project.keyFeatures && (
+                        <>
+                            <h1 className='text-2xl sm:text-3xl mb-4 pt-6 '>Key Features</h1>
+                            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6 w-full items-center justify-center'>
+                                {project.keyFeatures.map((tech) => (
+                                    <span key={tech} className="p-4 text-center text-lg sm:text-2xl rounded-2xl h-full shadow-lg shadow-slate-800 bg-gradient-to-r from-green-900 to-indigo-900 hover:bg-gradient-to-r hover:from-black hover:to-blue-800 hover:duration-200 h-full">
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
+                        </>
+                    )
+                }
+                {project.systemArchitecture && (
+                    <div className='text-wrap'>
+                        <h1 className="p-2 text-2xl sm:text-3xl">System Architecture</h1>
+                        <span className='pt-6 pb-6 m-2 flex flex-wrap text-[18px] sm:text-[22px] bg-gradient-to-r from-slate-900 to-slate-700 text-center justify-center rounded-xl'>{project.systemArchitecture}</span>
+                    </div>
                 )}
+                <div>
+                    {project.analysis && (
+                        <img src={project.analysis} alt={project.title} className="w-full h-auto object-cover rounded-sm mb-6 shadow-xl" />
+                    )}
+                </div>
                 {project.trends && (
                     <div>
-                        <h1 className='text-2xl p-2 mb-4' >💹 Trends </h1>
+                        <h1 className='text-xl sm:text-2xl p-2 mb-4'>💹 Trends </h1>
                         <span>{project.trends}</span>
                     </div>
                 )}
-                <h1 className='text-2xl mb-4'>Technologies Used</h1>
-                <div className="grid grid-cols-3 gap-12 mb-6  w-full items-center justify-center">
-                    {project.techStack.map((tech) => (
-                        <span key={tech} className=" p-20 text-center text-2xl text-wrap  rounded-2xl h-full shadow-lg shadow-slate-800 bg-gradient-to-r bg-gradient-to-b from-slate-900 to-indigo-900   hover:bg-gradient-to-r hover:from-red-800 hover:to-blue-800 hover:duration-200 h-full">
-                            {tech}
-                        </span>
-                    ))}
+                <br />
+                <div className='p-2'> 
+                {
+                    project.techStack && (
+                        <>
+                            <h1 className='text-2xl sm:text-3xl mb-4 pt-6 '>Technologies Used</h1>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6 w-full items-center justify-center">
+                                {project.techStack.map((tech) => (
+                                    <span key={tech} className="p-8 text-center flex flex-wrap justify-center text-lg sm:text-2xl rounded-2xl shadow-lg shadow-slate-800 bg-gradient-to-r from-slate-900 to-indigo-900 hover:bg-gradient-to-r hover:from-red-800 hover:to-blue-800 hover:duration-200 h-full">
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
+                        </>
+                    )
+                }
                 </div>
                 {project.projectLink !== "#" && (
                     <a
                         href={project.projectLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block bg-green-600 px-5 py-2 rounded-xl text-white font-semibold hover:bg-green-700 transition"
+                        className="inline-block bg-green-600 px-4 sm:px-5 py-2 rounded-xl text-white font-semibold hover:bg-green-700 transition"
                     >
                         View Project
                     </a>
                 )}
-            </div>
-            <div className='text-4xl'>
-                <span>Still in Development....</span>
             </div>
         </>
     );
