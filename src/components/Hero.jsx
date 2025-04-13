@@ -15,6 +15,7 @@ import { IoLogoJavascript } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { PROJECTS } from "../constants/index";
 import { useEffect, useState } from "react";
+import { Code2, Database, Sparkles, Brain, Rocket } from 'lucide-react';
 const iconVariants = (duration) => ({
   initial: { y: -10 },
   animate: {
@@ -39,6 +40,7 @@ const container = (delay) => ({
 
 const Hero = () => {
   const [data, setData] = useState([]);
+  const [isHovered, setIsHovered] = useState(false);
   useEffect(() => {
     fetch("https://api.github.com/users/ESHUshri202")
       .then((response) => response.json())
@@ -49,9 +51,9 @@ const Hero = () => {
   }, []);
   return (
     <>
-      <div className="border-b border-neutral-900 pb-4 pt-6 lg:mb-35">
-        <div className="flex flex-wrap">
-          <div className="w-full lg:w-1/2">
+      {/* <div className="border-b border-neutral-900 pb-4 pt-6 lg:mb-35">
+        <div className="flex flex-wrap justify-center items-center">
+          <div className="lg:w-full h-full border">
             <div className="flex flex-col items-center justify-center h-full lg:items-start">
               <motion.h1
                 variants={container(0)}
@@ -71,14 +73,6 @@ const Hero = () => {
               >
                 Data Analyst || Front-End Developer
               </motion.span>
-              {/* <motion.p
-                variants={container(0.75)}
-                initial="hidden"
-                animate="visible"
-                className="my-2 max-w-xl py-6 font-light tracking-tighter"
-              >
-                {HERO_CONTENT}
-              </motion.p> */}
             </div>
           </div>
           <div className="w-full lg:w-1/2 lg:p-8 rounded-md">
@@ -94,7 +88,68 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+      <motion.div 
+       whileInView={{ opacity: 1, y: 0 }}
+       initial={{ opacity: 0, y: -100 }}
+       transition={{ duration: 1 }}
+      className="min-h-screen  flex items-center justify-center p-4">
+        <div className="max-w-4xl w-full">
+          <div className="text-center space-y-8">
+            {/* Interactive Avatar Section */}
+            <div className="relative mb-12">
+              <div
+                className="w-32 h-32 mx-auto rounded-full overflow-hidden relative cursor-pointer transform transition-transform duration-300 hover:scale-105"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
+                <img
+                  src={profilePic}
+                  alt="Profile"
+                  className="w-full h-full object-cover"
+                />
+                <div className={`absolute inset-0 bg-gradient-to-r from-purple-500/30 to-pink-500/30 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
+              </div>
+
+              {/* Floating Icons */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48">
+                <Sparkles className={`absolute top-0 left-0 w-6 h-6 text-yellow-400 transition-all duration-500 ${isHovered ? 'animate-bounce' : ''}`} />
+                <Brain className={`absolute top-0 right-0 w-6 h-6 text-blue-400 transition-all duration-500 ${isHovered ? 'animate-pulse' : ''}`} />
+                <Rocket className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-6 text-purple-400 transition-all duration-500 ${isHovered ? 'animate-ping' : ''}`} />
+              </div>
+
+              {/* Pulsing Ring */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 rounded-full border-2 border-purple-500/30 animate-ping" />
+            </div>
+
+            <h1 className="text-5xl md:text-7xl font-bold">
+              <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text">
+                Achintya Shrivastava
+              </span>
+            </h1>
+
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-xl">
+              <div className="flex items-center gap-2">
+                <Database className="w-6 h-6 text-blue-400" />
+                <span className="bg-gradient-to-r from-blue-400 to-cyan-400 text-transparent bg-clip-text font-semibold">
+                  Data Analyst
+                </span>
+              </div>
+              <span className="hidden md:block text-gray-400">&bull;</span>
+              <div className="flex items-center gap-2">
+                <Code2 className="w-6 h-6 text-purple-400" />
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text font-semibold">
+                  Front End Web Developer
+                </span>
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <div className="h-1 w-32 mx-auto bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
       {/* About  */}
       <div className="border-b border-neutral-900 pb-2">
         <motion.div
