@@ -329,7 +329,30 @@ const projects = [
       "Easy user interface with high engagement"
     ],
     "conclusion": "A proactive stroke risk predictor built on an end-to-end ML pipeline integrated into a modern web stack."
+  },
+  {
+    "title": "TransCode - Language Translation Platform",
+    "details": "TransCode is a web-based language translation platform that uses machine learning to translate text from various languages into English. It simplifies communication across language barriers, making it especially useful for global users and learners.",
+    "image": "https://www.groovypost.com/wp-content/uploads/2018/04/foreign-language-translate-feature-1000x450.jpg",
+    "techStack": ["Python", "Flask", "React JS", "Tailwind CSS"],
+    "projectLink": "https://trans-code-xi.vercel.app/",
+    "OverView": "A modern web app that allows users to input text in any language and get instant English translations using a lightweight Flask-based ML backend.",
+    "ListDown": [
+      { "id": 1, "content": "Text input form for various languages" },
+      { "id": 2, "content": "Real-time translation into English" },
+      { "id": 3, "content": "Responsive and modern UI with Tailwind CSS" },
+      { "id": 4, "content": "Flask API for translation logic" }
+    ],
+    "systemArchitecture": "React Frontend → Flask API → Language Translation Model",
+    "keyFeatures": ["Instant translation", "Multi-language support", "Clean UI with Tailwind", "Accurate English output"],
+    "benefits": [
+      "Breaks down language barriers",
+      "User-friendly design for quick access",
+      "Useful for travelers, learners, and global users"
+    ],
+    "conclusion": "TransCode is an efficient and accessible platform for translating any language to English, built with a streamlined full-stack approach."
   }
+  
 ];
 
 export default projects;
