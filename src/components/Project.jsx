@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import projects from './projectsData'; // Import the project data
+import Snowfall from "react-snowfall";
 
 const Project = () => {
   const [selected, setSelected] = useState("All");
@@ -27,6 +28,7 @@ const Project = () => {
 
   return (
     <>
+    <Snowfall/>
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}

@@ -16,6 +16,7 @@ import { Link } from "react-router-dom";
 import { PROJECTS } from "../constants/index";
 import { useEffect, useState } from "react";
 import { Code2, Database, Sparkles, Brain, Rocket } from 'lucide-react';
+import Snowfall from "react-snowfall";
 const iconVariants = (duration) => ({
   initial: { y: -10 },
   animate: {
@@ -89,6 +90,7 @@ const Hero = () => {
           </div>
         </div>
       </div> */}
+      <Snowfall/>
       <motion.div 
        whileInView={{ opacity: 1, y: 0 }}
        initial={{ opacity: 0, y: -100 }}
@@ -130,16 +132,16 @@ const Hero = () => {
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-xl">
               <div className="flex items-center gap-2">
-                <Database className="w-6 h-6 text-blue-400" />
-                <span className="bg-gradient-to-r from-blue-400 to-cyan-400 text-transparent bg-clip-text font-semibold">
-                  Data Analyst
+                <Code2 className="w-6 h-6 text-purple-400" />
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text font-semibold">
+                  Python Developer
                 </span>
               </div>
               <span className="hidden md:block text-gray-400">&bull;</span>
               <div className="flex items-center gap-2">
                 <Code2 className="w-6 h-6 text-purple-400" />
                 <span className="bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text font-semibold">
-                  Front End Web Developer
+                  AI ML Developer
                 </span>
               </div>
             </div>
@@ -201,10 +203,10 @@ const Hero = () => {
             className="w-full lg:w-1/2 p-4"
           >
             <div className="flex justify-center lg:justify-start">
-              <p className="my-2 max-w-xl py-6">{ABOUT_TEXT}</p>
+              <p className="my-2 max-w-xl py-6 text-justify [text-justify:inter-word]">{ABOUT_TEXT}</p>
             </div>
             <motion.div className="flex items-center justify-start gap-6">
-              <a href="https://drive.google.com/file/d/1EtBBdGq6qqJEcAS2_jJPzLHey80YGthZ/view?usp=sharing">
+              <a href="https://drive.google.com/file/d/1dGp4JfDfSXoeeUH7hAUb8KOhOgtX9Iq4/view?usp=sharing">
                 <button className="rounded-2xl my-2 max-w-xl py-4 px-6 bg-blue-900 hover:bg-slate-700 hover:text-black duration-300 text-white font-semibold ">
                   Download Resume
                 </button>

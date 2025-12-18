@@ -6,6 +6,7 @@ import { MdEmail } from "react-icons/md";
 import { useState } from "react";
 import { db } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
+import Snowfall from "react-snowfall";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -38,6 +39,7 @@ const Contact = () => {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center p-6 md:p-12 lg:p-16 gap-6">
+    <Snowfall/>
       <div className="w-full max-w-xl bg-[#ffff]/10 p-10 rounded-2xl font-[sans-serif]">
         <h1 className="text-4xl text-blue-400 font-thin text-center">Contact Us</h1>
         <form className="mt-8 space-y-4" onSubmit={handleSubmit}>

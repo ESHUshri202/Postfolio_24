@@ -2,6 +2,8 @@ import aboutImage from "../assets/about.jpg";
 import { ABOUT_TEXT } from "../constants";
 import { motion } from "framer-motion";
 import profilePic from "../assets/photo.jpg";
+import { duration } from "@mui/material";
+import Snowfall from "react-snowfall";
 
 const About = () => {
   const publications =[
@@ -9,10 +11,20 @@ const About = () => {
       title: "Event Tracking System Using Web APIs and Expert System",
     }
   ];
+  const experience = [
+    {
+      title: "AI ML Developer (Intern), Kickr Technology",
+      duration: "05/2025 - 11/2025"
+    },
+    {
+      title: "Data Science Intern, AppSquadz Software",
+      duration: "09/2024 - 05/2025"
+    }
+  ]
   const internships = [
     {
       title: "Machine Learning Using Python, CodeSquadz",
-      duration: "09/2024 - Present",
+      duration: "09/2024 - 03/2025",
     },
     {
       title: "Web Development, Internshala Training",
@@ -50,6 +62,7 @@ const About = () => {
 
   return (
     <div className="pb-2">
+    <Snowfall/>
       <motion.div
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
@@ -97,12 +110,12 @@ const About = () => {
           className="w-full lg:w-1/2"
         >
           <div className="flex justify-center lg:justify-start">
-            <p className="my-2 max-w-xl py-6 text-sm sm:text-base">
+            <p className="my-2 max-w-xl py-6 text-sm sm:text-base text-justify [text-justify:inter-word]">
               {ABOUT_TEXT}
             </p>
           </div>
           <motion.div>
-            <a href="https://drive.google.com/file/d/1hXq1o4KRAwh1_ONKl9MrkVx4U0UUV6ul/view?usp=sharing">
+            <a href="https://drive.google.com/file/d/1dGp4JfDfSXoeeUH7hAUb8KOhOgtX9Iq4/view?usp=sharing">
               <button className="border-none rounded-2xl my-2 max-w-xl py-4 px-6 bg-slate-900 hover:bg-slate-300 hover:text-black duration-100 text-white font-semibold text-sm sm:text-base">
                 Download Resume
               </button>
@@ -185,6 +198,58 @@ const About = () => {
         </div>
       </section>
 
+      {/* Experience */}
+      <section className="p-8">
+        <motion.h3
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -100 }}
+          transition={{ duration: 1 }}
+          className="my-8 text-4xl sm:text-5xl text-center"
+        >
+          Experience
+        </motion.h3>
+        <motion.div
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -100 }}
+          transition={{ duration: 1 }}
+          className="flex flex-wrap justify-center items-center"
+        >
+          <span className="border-4 rounded-full border-blue-500 m-2 w-1"></span>
+          <span className="border-4 rounded-full border-blue-500 m-2 w-2"></span>
+          <span className="border-4 rounded-full border-blue-500 m-2 w-4"></span>
+          <span className="border-4 rounded-full border-blue-500 m-2 w-8"></span>
+          <span className="border-4 rounded-full border-blue-500 m-2 w-8"></span>
+          <span className="border-4 rounded-full border-blue-500 m-2 w-4"></span>
+          <span className="border-4 rounded-full border-blue-500 m-2 w-2"></span>
+          <span className="border-4 rounded-full border-blue-500 m-2 w-1"></span>
+        </motion.div>
+
+        <motion.div
+      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, x: -100 }}
+      transition={{ duration: 1 }}
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 p-4 lg:p-12"
+    >
+      {experience.map((internship, index) => (
+        <motion.div
+          key={index}
+          className="relative bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl"
+        >
+          <div className="p-4">
+            <h3 className="text-left text-2xl text-black sm:text-3xl font-bold mb-2">
+              {internship.title}
+            </h3>
+            <p className="text-right text-xl sm:text-xl text-gray-700">
+              {internship.duration}
+            </p>
+          </div>
+          <div className="absolute inset-0 bg-gray-800 bg-opacity-0 hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center text-white text-lg opacity-0 hover:opacity-100">
+            {/* <p>Click for more details</p> */}
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
+      </section>
       {/* Internship/Training Section */}
       <section className="p-8">
         <motion.h3

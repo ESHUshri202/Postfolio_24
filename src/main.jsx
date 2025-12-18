@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+// import App from './App.jsx'
 import './index.css'
 import Hero from './components/Hero.jsx'
 import About from './components/About.jsx'
@@ -10,33 +10,8 @@ import Contact from './components/Contact.jsx'
 import { createBrowserRouter,createRoutesFromElements,Route,RouterProvider } from 'react-router-dom'
 import Layout from './Layout.jsx'
 import ProjectDetails from './components/ProjectDetails.jsx'
-// const router = createBrowserRouter([
-//   {
-//     path: '/',
-//     element: <Layout/>,
-//     children: [
-//       {
-//         path:"",
-//         element: <Hero/>
-//       }, {
-//         path:"about",
-//         element: <About/>
-//       },{
-//       }, {
-//         path:"technologies",
-//         element: <Technologies/>
-//       },{
-//       }, {
-//         path:"project",
-//         element: <Project/>
-//       },{
-//         path:"contact",
-//         element: <Contact/>
-//       }
-//     ]
-//   }
-// ])
-
+// import Experience from './components/Experience.jsx'
+import Snowfall from 'react-snowfall'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -53,6 +28,7 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+  <Snowfall/>
     <div className="overflow-x-hidden text-neutral-300 antialiased selection:bg-cyan-300 
     selection:text-cyan-900">
       <div className="fixed top-0 -z-10 h-full w-full ">
