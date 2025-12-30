@@ -27,6 +27,39 @@ const projects = [
     conclusion: "A powerful tool that blends ML and Python frameworks for smart healthcare recommendations"
   },
   {
+    title: "Smart HRMS",
+    details: "Human Resource Management System (HRMS) is a web-based platform designed to automate and manage core HR operations. It streamlines employee management, payroll processing, attendance tracking, leave management, and performance monitoring through a secure and scalable system.",
+    image: "https://img.freepik.com/free-vector/human-resources-concept-illustration_114360-739.jpg",
+    techStack: ["Python", "Django", "Flask", "PostgreSQL", "React", "Bootstrap"],
+    projectLink: "#",
+    OverView: "The Human Resource Management System (HRMS) is an intelligent enterprise solution that helps organizations efficiently manage employee data and HR workflows. It integrates backend automation with a user-friendly interface to improve productivity, transparency, and decision-making.",
+    ListDown: [
+      { id: 1, content: "Employee Management" },
+      { id: 2, content: "Attendance Tracking" },
+      { id: 3, content: "Leave Management" },
+      { id: 4, content: "Payroll Processing" },
+      { id: 5, content: "Performance Evaluation" },
+      { id: 6, content: "Role-Based Access Control" }
+    ],
+    systemArchitecture: "Frontend (React/HTML/CSS) → Django REST API → Business Logic Layer → Database (PostgreSQL/MySQL)",
+    keyFeatures: [
+      "Employee onboarding & profiles",
+      "Attendance & leave automation",
+      "Salary & payroll management",
+      "Performance appraisal system",
+      "HR analytics & reports",
+      "Admin dashboard"
+    ],
+    benefits: [
+      "Reduces manual HR workload",
+      "Improves data accuracy",
+      "Enhances employee transparency",
+      "Scalable for growing organizations",
+      "Secure role-based access"
+    ],
+    conclusion: "A robust HRMS that leverages Python and modern web technologies to simplify HR operations, improve workforce management, and support data-driven organizational decisions."
+  },
+  {
     title: "Feast of Flavours",
     details: "Feast of Flavour is a vibrant recipe showcase website that celebrates culinary creativity. It features a wide variety of delicious recipes, from quick meals to gourmet dishes, offering step-by-step instructions to inspire both beginner and experienced cooks to explore diverse flavors.",
     image: "https://s3-alpha.figma.com/hub/file/6090747941/acb2e473-5d7c-434d-9782-9a2110830fc5-cover.png",

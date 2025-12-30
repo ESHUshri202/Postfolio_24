@@ -1,8 +1,6 @@
-import aboutImage from "../assets/about.jpg";
 import { ABOUT_TEXT } from "../constants";
 import { motion } from "framer-motion";
 import profilePic from "../assets/photo.jpg";
-import { duration } from "@mui/material";
 import Snowfall from "react-snowfall";
 
 const About = () => {

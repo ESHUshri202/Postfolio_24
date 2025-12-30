@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -14,14 +15,17 @@ const Project = () => {
   // Function to filter projects based on the selected category
   const filteredProjects = projects.filter((project) => {
     if (selected === "All") return true; // Show all projects
-    if (selected === "Front-End Development") {
-      return project.techStack.includes("HTML") || project.techStack.includes("CSS") || project.techStack.includes("React Js") || project.techStack.includes("Tailwind CSS");
+    if (selected === "Front-End Development Projects") {
+      return project.techStack.includes("HTML") || project.techStack.includes("CSS") || project.techStack.includes("React Js") || project.techStack.includes("Tailwind CSS") || project.techStack.includes("JavaScript") || project.techStack.includes("Bootstrap");
     }
-    if (selected === "Machine Learning") {
-      return project.techStack.includes("Python") && (project.techStack.includes("Machine Learning") || project.techStack.includes("TensorFlow") || project.techStack.includes("Streamlit") || project.techStack.includes("Flask") || project.techStack.includes("Django"));
+    if (selected === "Machine Learning Projects") {
+      return project.techStack.includes("Python") && (project.techStack.includes("Machine Learning") || project.techStack.includes("TensorFlow") || project.techStack.includes("Streamlit") || project.techStack.includes("Flask") || project.techStack.includes("Django")) || project.techStack.includes("SQL");
+    }
+    if (selected === "Python Projects") {
+      return project.techStack.includes("Python") && (project.techStack.includes("Django") || project.techStack.includes("OpenCV") || project.techStack.includes("Streamlit") || project.techStack.includes("Flask") || project.techStack.includes("FastAPI"));
     }
     if (selected === "Data Analysis") {
-      return project.techStack.includes("Power BI");
+      return project.techStack.includes("Power BI") || project.techStack.includes("Tableau") || project.techStack.includes("Excel") || project.techStack.includes("SQL") || project.techStack.includes("Python") && (project.techStack.includes("Pandas") || project.techStack.includes("NumPy") || project.techStack.includes("Matplotlib") || project.techStack.includes("Seaborn"));
     }
     return false; // Default case
   });
@@ -85,9 +89,10 @@ const Project = () => {
             className="appearance-none w-full p-4 pr-10 hover:text-xl m-2 bg-blue-950 text-white rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
           >
             <option>All</option>
-            <option>Front-End Development</option>
-            <option>Machine Learning</option>
-            <option>Data Analysis</option>
+            <option>Front-End Development Projects</option>
+            <option>Python Projects</option>
+            <option>Machine Learning Projects</option>
+            <option>Data Analysis Projects</option>
           </select>
 
           {/* Custom arrow positioned slightly left */}
@@ -117,7 +122,7 @@ const Project = () => {
                   <h6 className="mb-2 text-slate-800 text-xl font-semibold">{project.title}</h6>
                   <p className="text-slate-600 leading-normal font-light">{project.details}</p>
                 </div>
-                <div className="flex px-4 pt-0">
+                <div className="flex flex-wrap px-4 pt-0 gap-2">
                   {project.techStack.map((tech, techIndex) => (
                     <span key={techIndex} className="mr-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-white">
                       {tech}
