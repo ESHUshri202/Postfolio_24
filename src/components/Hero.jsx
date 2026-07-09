@@ -90,7 +90,7 @@ const Hero = () => {
           </div>
         </div>
       </div> */}
-      <Snowfall/>
+      {/*  */}
       <motion.div 
        whileInView={{ opacity: 1, y: 0 }}
        initial={{ opacity: 0, y: -100 }}
@@ -180,17 +180,17 @@ const Hero = () => {
           <span className="border-4 rounded-full border-blue-500 m-2 w-1 "></span>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row justify-center items-center">
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-12 px-4 sm:px-8">
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.5 }}
-            className="w-full lg:w-1/2 lg:p-8"
+            className="w-full lg:w-1/2 flex justify-center"
           >
             <div className="flex items-center justify-center">
               <img
                 src={profilePic}
-                className="backdrop-saturate-50 rounded-full h-72 w-72 md:h-full md:w-full lg:h-62 lg:w-62 "
+                className="rounded-full h-64 w-64 sm:h-80 sm:w-80 lg:h-96 lg:w-96 object-cover"
                 alt="about"
               />
             </div>
@@ -200,19 +200,19 @@ const Hero = () => {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 100 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="w-full lg:w-1/2 p-4"
+            className="w-full lg:w-1/2 flex flex-col items-center lg:items-start"
           >
-            <div className="flex justify-center lg:justify-start">
-              <p className="my-2 max-w-xl py-6 text-justify [text-justify:inter-word]">{ABOUT_TEXT}</p>
+            <div className="flex justify-center lg:justify-start w-full">
+              <p className="my-2 max-w-xl py-6 text-sm sm:text-base text-justify [text-justify:inter-word]">{ABOUT_TEXT}</p>
             </div>
-            <motion.div className="flex items-center justify-start gap-6">
+            <motion.div className="flex flex-col sm:flex-row items-center lg:items-start gap-4 w-full lg:w-auto">
               <a href="https://drive.google.com/file/d/1dGp4JfDfSXoeeUH7hAUb8KOhOgtX9Iq4/view?usp=sharing">
-                <button className="rounded-2xl my-2 max-w-xl py-4 px-6 bg-blue-900 hover:bg-slate-700 hover:text-black duration-300 text-white font-semibold ">
+                <button className="rounded-2xl py-4 px-6 bg-blue-900 hover:bg-slate-700 hover:text-black duration-300 text-white font-semibold text-sm sm:text-base">
                   Download Resume
                 </button>
               </a>
               <Link to="/project">
-                <button className="rounded-2xl my-2 max-w-xl py-4 px-6 bg-blue-900 hover:bg-slate-700 hover:text-black duration-300 text-white font-semibold ">
+                <button className="rounded-2xl py-4 px-6 bg-blue-900 hover:bg-slate-700 hover:text-black duration-300 text-white font-semibold text-sm sm:text-base">
                   View Project
                 </button>
               </Link>
@@ -367,8 +367,8 @@ const Hero = () => {
         </div>
       </div>
       {/* Project */}
-      <div className="px-4 sm:px-24 gap-2">
-        <div className="border-b border-neutral-900 pb-3 ">
+      <div className="px-4 sm:px-8 lg:px-24">
+        <div className="border-b border-neutral-900 pb-3">
           <motion.h2
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: -100 }}
@@ -396,9 +396,9 @@ const Hero = () => {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -100 }}
             transition={{ duration: 1 }}
-            className="grid grid-cols-1 sm:grid-cols-3 sm:grid-cols-3 items-center justify-around gap-6 sm:gap-12"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start justify-center gap-6 sm:gap-8 lg:gap-12"
           >
-            <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full sm:w-96 hover:shadow-lg transition-shadow duration-300">
+            <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full sm:w-96 h-full hover:shadow-lg transition-shadow duration-300">
               <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
                 <img
                   className="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform group-hover:scale-110"
@@ -406,11 +406,11 @@ const Hero = () => {
                   alt="Parkison-Disease-Detection"
                 />
               </div>
-              <div className="p-4">
-                <h6 className="mb-2 text-slate-800 text-lg sm:text-xl font-semibold">
+              <div className="p-4 flex-grow flex flex-col">
+                <h6 className="mb-2 text-slate-800 text-base sm:text-lg font-semibold">
                   Parkison-Disease-Detection
                 </h6>
-                <p className="text-slate-600 leading-normal font-light">
+                <p className="text-slate-600 text-sm leading-normal font-light line-clamp-3 flex-grow">
                   The Parkinson's Disease Detection model uses machine learning
                   algorithms to analyze data from various sources like speech,
                   handwriting, and movement patterns. The model helps in early
@@ -440,7 +440,7 @@ const Hero = () => {
                 </Link>
               </div>
             </div>
-            <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full sm:w-96 hover:shadow-lg transition-shadow duration-300">
+            <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full sm:w-96 h-full hover:shadow-lg transition-shadow duration-300">
               <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
                 <img
                   className="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform group-hover:scale-110"
@@ -448,11 +448,11 @@ const Hero = () => {
                   alt="investment-seed-round"
                 />
               </div>
-              <div className="p-4">
-                <h6 className="mb-2 text-slate-800 text-xl font-semibold">
+              <div className="p-4 flex-grow flex flex-col">
+                <h6 className="mb-2 text-slate-800 text-base sm:text-lg font-semibold">
                   Feast of Flavours
                 </h6>
-                <p className="text-slate-600 leading-normal font-light">
+                <p className="text-slate-600 text-sm leading-normal font-light line-clamp-3 flex-grow">
                   Feast of Flavour is a vibrant recipe showcase website that
                   celebrates culinary creativity. It features a wide variety of
                   delicious recipes, from quick meals to gourmet dishes,
@@ -482,7 +482,7 @@ const Hero = () => {
                 </Link>
               </div>
             </div>
-            <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full sm:w-96 hover:shadow-lg transition-shadow duration-300">
+            <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full sm:w-96 h-full hover:shadow-lg transition-shadow duration-300">
               <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
                 <img
                   className="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform group-hover:scale-110"
@@ -490,11 +490,11 @@ const Hero = () => {
                   alt="investment-seed-round"
                 />
               </div>
-              <div className="p-4">
-                <h6 className="mb-2 text-slate-800 text-xl font-semibold">
+              <div className="p-4 flex-grow flex flex-col">
+                <h6 className="mb-2 text-slate-800 text-base sm:text-lg font-semibold">
                   Medical Recommendation System
                 </h6>
-                <p className="text-slate-600 leading-normal font-light">
+                <p className="text-slate-600 text-sm leading-normal font-light line-clamp-3 flex-grow">
                   Medical Recommendation System is an online platform which can
                   detect the disease using given symptoms. A fully functional
                   machine learning based project with features like disease
@@ -526,7 +526,7 @@ const Hero = () => {
             </div>
           </motion.div>
           {/* Repositories */}
-          <div className="px-4 sm:px-24 gap-2">
+          <div>
             <div className="border-b border-neutral-900 pb-3 ">
               <motion.h2
                 whileInView={{ opacity: 1, y: 0 }}

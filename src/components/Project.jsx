@@ -32,7 +32,7 @@ const Project = () => {
 
   return (
     <>
-    <Snowfall/>
+    
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
@@ -107,10 +107,10 @@ const Project = () => {
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 place-items-center gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-items-center gap-6 sm:gap-8 lg:gap-10">
           {filteredProjects.map((project, index) => (
             <Link to={`/project/${encodeURIComponent(project.title)}`}>
-              <div key={index} className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96 hover:shadow-lg transition-shadow duration-300">
+              <div key={index} className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full sm:w-96 h-full hover:shadow-lg transition-shadow duration-300">
                 <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
                   <img
                     className="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform group-hover:scale-110"
@@ -118,9 +118,9 @@ const Project = () => {
                     alt={project.title}
                   />
                 </div>
-                <div className="p-4">
+                <div className="p-4 flex-grow flex flex-col">
                   <h6 className="mb-2 text-slate-800 text-xl font-semibold">{project.title}</h6>
-                  <p className="text-slate-600 leading-normal font-light">{project.details}</p>
+                  <p className="text-slate-600 leading-normal font-light line-clamp-3 flex-grow">{project.details}</p>
                 </div>
                 <div className="flex flex-wrap px-4 pt-0 gap-2">
                   {project.techStack.map((tech, techIndex) => (

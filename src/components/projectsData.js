@@ -103,27 +103,55 @@ const projects = [
     conclusion: "An efficient and user-friendly tool for Parkinson's disease risk assessment"
   },
   {
-    "title": "Company X Template",
-    "details": "Company X’s template website, built with React.js and Tailwind CSS, features a modern, responsive design. React enables dynamic content management, while Tailwind CSS ensures a customizable, efficient, and visually appealing user interface, optimized for performance.",
-    "image": "https://as2.ftcdn.net/v2/jpg/05/44/23/79/1000_F_544237902_yi7ivAoP3PuyCj2LD5Mb4ZrKXvUuHsiT.jpg",
-    "techStack": ["HTML", "Tailwind CSS", "React Js"],
-    "projectLink": "https://company-x-demo.vercel.app/",
-    "OverView": "A responsive company website template built with React.js and Tailwind CSS, offering a modern design and dynamic content structure tailored for startups or corporate websites.",
-    "ListDown": [
-      { "id": 1, "content": "Fully responsive layout" },
-      { "id": 2, "content": "Dynamic content components" },
-      { "id": 3, "content": "Dark/light mode design" },
-      { "id": 4, "content": "Fast page load & clean code structure" }
-    ],
-    "systemArchitecture": "React components for modular UI → Tailwind CSS for utility-first styling → Static deployment via Vercel",
-    "keyFeatures": ["Responsive design", "Modular component structure", "SEO-optimized", "Mobile-first UI", "Clean design aesthetics"],
-    "benefits": [
-      "Rapid UI development with Tailwind",
-      "Component-based structure",
-      "SEO and mobile-optimized"
-    ],
-    "conclusion": "Perfect starter template for businesses seeking a clean and scalable online presence."
-  }
+  "title": "MigToolKit - Data Migration Tool",
+  "details": "MigToolKit is a high-performance data migration platform that simplifies the transfer of data between different databases, cloud platforms, and enterprise systems. It provides an intuitive web interface, automated migration workflows, validation mechanisms, and progress monitoring to ensure secure, accurate, and reliable data migration with minimal downtime.",
+  "image": "https://as2.ftcdn.net/v2/jpg/05/44/23/79/1000_F_544237902_yi7ivAoP3PuyCj2LD5Mb4ZrKXvUuHsiT.jpg",
+  "techStack": [
+    "Python FastAPI",
+    "React.js",
+    "PostgreSQL",
+    "Docker"
+  ],
+  "projectLink": "https://migtoolkit-demo.vercel.app/",
+  "OverView": "MigToolKit is an enterprise-grade data migration solution that enables organizations to migrate data efficiently between heterogeneous databases and systems while maintaining data integrity, reducing manual effort, and minimizing operational downtime.",
+  "ListDown": [
+    {
+      "id": 1,
+      "content": "Migrate data between multiple databases and enterprise systems."
+    },
+    {
+      "id": 2,
+      "content": "Automated migration workflows with real-time progress tracking."
+    },
+    {
+      "id": 3,
+      "content": "Data validation and integrity checks during migration."
+    },
+    {
+      "id": 4,
+      "content": "Secure, scalable, and containerized deployment using Docker."
+    }
+  ],
+  "systemArchitecture": "React.js frontend for an interactive user interface → FastAPI backend for migration orchestration and REST APIs → PostgreSQL for migration metadata, job history, and configuration storage → Docker for containerized deployment and scalability.",
+  "keyFeatures": [
+    "Database-to-database migration",
+    "Automated migration jobs",
+    "Real-time migration status monitoring",
+    "Data validation and consistency checks",
+    "Migration history and reporting",
+    "Role-based user management",
+    "REST API integration",
+    "Dockerized deployment"
+  ],
+  "benefits": [
+    "Reduces manual migration effort",
+    "Ensures data accuracy and integrity",
+    "Minimizes migration downtime",
+    "Supports scalable enterprise deployments",
+    "Improves migration visibility through monitoring and reporting"
+  ],
+  "conclusion": "MigToolKit provides organizations with a secure, scalable, and automated platform for performing complex data migrations efficiently. Its modern architecture, real-time monitoring, and validation capabilities make it an ideal solution for enterprise data migration projects."
+}
   ,
   {
     "title": "Stock Price Prediction Model",

@@ -11,6 +11,10 @@ const About = () => {
   ];
   const experience = [
     {
+      title: "Junior Full Stack Developer, Whitehats Technologies",
+      duration: "02/2026 - Present"
+    },
+    {
       title: "AI ML Developer (Intern), Kickr Technology",
       duration: "05/2025 - 11/2025"
     },
@@ -60,7 +64,7 @@ const About = () => {
 
   return (
     <div className="pb-2">
-    <Snowfall/>
+    
       <motion.div
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
@@ -86,28 +90,28 @@ const About = () => {
         <span className="border-4 rounded-full border-blue-500 m-2 w-2"></span>
         <span className="border-4 rounded-full border-blue-500 m-2 w-1"></span>
       </motion.div>
-      <div className="flex flex-wrap justify-center items-center">
+      <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-12 px-4 sm:px-8">
         <motion.div
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.5 }}
-          className="w-full lg:w-1/2 lg:p-8"
+          className="w-full lg:w-1/2 flex justify-center"
         >
           <div className="flex items-center justify-center">
             <img
               src={profilePic}
-              className="rounded-full h-full w-full sm:h-full sm:w-full"
+              className="rounded-full h-64 w-64 sm:h-80 sm:w-80 lg:h-96 lg:w-96 object-cover"
               alt="about"
             />
           </div>
         </motion.div>
         <motion.div
-          whileInView={{ opacity: 1, w: 0 }}
+          whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: 100 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-full lg:w-1/2"
+          className="w-full lg:w-1/2 flex flex-col items-center lg:items-start"
         >
-          <div className="flex justify-center lg:justify-start">
+          <div className="flex justify-center lg:justify-start w-full">
             <p className="my-2 max-w-xl py-6 text-sm sm:text-base text-justify [text-justify:inter-word]">
               {ABOUT_TEXT}
             </p>
@@ -234,10 +238,10 @@ const About = () => {
           className="relative bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl"
         >
           <div className="p-4">
-            <h3 className="text-left text-2xl text-black sm:text-3xl font-bold mb-2">
+            <h3 className="text-left text-base sm:text-lg text-black font-bold mb-2">
               {internship.title}
             </h3>
-            <p className="text-right text-xl sm:text-xl text-gray-700">
+            <p className="text-right text-sm sm:text-base text-gray-700">
               {internship.duration}
             </p>
           </div>
@@ -286,10 +290,10 @@ const About = () => {
           className="relative bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl"
         >
           <div className="p-4">
-            <h3 className="text-left text-2xl text-black sm:text-3xl font-bold mb-2">
+            <h3 className="text-left text-base sm:text-lg text-black font-bold mb-2">
               {internship.title}
             </h3>
-            <p className="text-right text-xl sm:text-xl text-gray-700">
+            <p className="text-right text-sm sm:text-base text-gray-700">
               {internship.duration}
             </p>
           </div>
@@ -338,7 +342,7 @@ const About = () => {
           className="relative bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl"
         >
           <div className="p-4">
-            <h3 className="text-left text-2xl text-black sm:text-3xl font-bold mb-2">
+            <h3 className="text-left text-base sm:text-lg text-black font-bold mb-2">
               {publication.title}
             </h3>
             {/* <p className="text-right text-xl sm:text-xl text-gray-700">
