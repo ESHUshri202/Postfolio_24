@@ -1,164 +1,181 @@
-import { SiPython, SiNumpy, SiPandas, SiMysql, SiPowerbi, SiMongodb, SiJupyter } from "react-icons/si";
-import { RiFileExcel2Fill, RiReactjsLine } from "react-icons/ri";
-import { FaHtml5 } from "react-icons/fa";
-import { IoLogoCss3, IoLogoJavascript } from "react-icons/io5";
-import { DiNodejs, DiFirebase } from "react-icons/di";
-import { BiLogoVisualStudio } from "react-icons/bi";
+/* eslint-disable react/prop-types */
 import { motion } from "framer-motion";
-import { DiVisualstudio } from "react-icons/di";
+import {
+    SiCss3,
+    SiDjango,
+    SiDocker,
+    SiFastapi,
+    SiFlask,
+    SiGit,
+    SiHtml5,
+    SiJavascript,
+    SiJupyter,
+    SiMongodb,
+    SiMicrosoftsqlserver,
+    SiMicrosoftexcel,
+    SiMysql,
+    SiNumpy,
+    SiPandas,
+    SiPostgresql,
+    SiPowerbi,
+    SiPython,
+    SiReact,
+    SiScikitlearn,
+    SiTailwindcss,
+    SiTensorflow,
+} from "react-icons/si";
+import { BiLogoVisualStudio } from "react-icons/bi";
+import { Code2, Database, Layers3, Sparkles } from "lucide-react";
 
-const iconVariants = (duration) => ({
-    initial: { y: -10 },
-    animate: {
-        y: [10, -10],
-        transition: {
-            duration: duration,
-            ease: "linear",
-            repeat: Infinity,
-            repeatType: "reverse",
-        }
-    },
-});
+const pythonStack = [
+    { name: "Python", icon: SiPython, color: "#ffd75e" },
+    { name: "Django", icon: SiDjango, color: "#79bd8c" },
+    { name: "Flask", icon: SiFlask, color: "#eee7d8" },
+    { name: "FastAPI", icon: SiFastapi, color: "#69d4c3" },
+    { name: "REST APIs", icon: Code2, color: "#d6bd80" },
+    { name: "NumPy", icon: SiNumpy, color: "#75bdf1" },
+    { name: "Pandas", icon: SiPandas, color: "#c9a0e5" },
+    { name: "Scikit-learn", icon: SiScikitlearn, color: "#efa85c" },
+    { name: "TensorFlow", icon: SiTensorflow, color: "#f0a044" },
+    { name: "Power BI", icon: SiPowerbi, color: "#e4c93d" },
+    { name: "Excel", icon: SiMicrosoftexcel, color: "#83c49a" },
+];
 
-const Technologies = () => {
+const databases = [
+    { name: "MySQL", icon: SiMysql, color: "#69bde8", note: "Relational" },
+    { name: "MongoDB", icon: SiMongodb, color: "#83c49a", note: "Document" },
+    { name: "PostgreSQL", icon: SiPostgresql, color: "#86aee3", note: "Relational" },
+    { name: "MSSQL", icon: SiMicrosoftsqlserver, color: "#e77f83", note: "Relational" },
+];
+
+const frontendStack = [
+    { name: "HTML5", icon: SiHtml5, color: "#f28b62" },
+    { name: "CSS3", icon: SiCss3, color: "#7aa8ec" },
+    { name: "JavaScript", icon: SiJavascript, color: "#f0d566" },
+    { name: "React", icon: SiReact, color: "#70d4e8" },
+    { name: "Tailwind CSS", icon: SiTailwindcss, color: "#69d4c3" },
+];
+
+const developerTools = [
+    { name: "Git", icon: SiGit, color: "#ed8d71" },
+    { name: "Docker", icon: SiDocker, color: "#76aee8" },
+    { name: "Jupyter", icon: SiJupyter, color: "#f0a044" },
+    { name: "VS Code", icon: BiLogoVisualStudio, color: "#72bde9" },
+];
+
+const SkillTile = ({ skill, index, compact = false }) => {
+    const Icon = skill.icon;
+
     return (
-        <div className="border-b border-neutral-800 pb-24">
-            <motion.h2
-                whileInView={{ opacity: 1, y: 0 }}
-                initial={{ opacity: 0, y: -100 }}
-                transition={{ duration: 1 }}
-                className="my-12 text-center text-5xl">Technologies</motion.h2>
-            <motion.div
-                whileInView={{ opacity: 1, y: 0 }}
-                initial={{ opacity: 0, y: -100 }}
-                transition={{ duration: 1 }}
-                className="flex flex-wrap justify-center items-center"
-            >
-                {/* Decorative dots */}
-                {[1, 2, 4, 8, 8, 4, 2, 1].map((size, index) => (
-                    <span key={index} className={`border-4 rounded-full border-blue-500 m-2 w-${size}`}></span>
-                ))}
-            </motion.div>
+        <motion.div
+            className={`tech-skill-tile${compact ? " tech-skill-tile-compact" : ""}`}
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.35, delay: Math.min(index, 8) * 0.045 }}
+            whileHover={{ y: -4 }}
+            title={skill.name}
+        >
+            <Icon className="tech-skill-icon" style={{ color: skill.color }} aria-hidden="true" />
+            <span className="tech-skill-name">{skill.name}</span>
+            {skill.note && <span className="tech-skill-note">{skill.note}</span>}
+        </motion.div>
+    );
+};
 
-            <motion.div
-                whileInView={{ opacity: 1, x: 0 }}
-                initial={{ opacity: 0, x: 100 }}
-                transition={{ duration: 1.5 }}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-center p-12"
-            >
-                {/* Data Analytics Section */}
-                <motion.div className="rounded-xl hover:shadow-xl hover:shadow-rose-900 hover:duration-200 bg-[#ffff]/10 p-4">
-                    <motion.h2
-                        whileInView={{ opacity: 1, y: 0 }}
-                        initial={{ opacity: 0, y: -100 }}
-                        transition={{ duration: 1 }}
-                        className="text-5xl my-6 p-2 font-bold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">Data Analytics</motion.h2>
-                    <motion.div className="flex flex-wrap gap-4 justify-center">
-                        {[
-                            { icon: <SiPython className="text-7xl text-orange-500" />, duration: 2.5 },
-                            { icon: <SiNumpy className="text-7xl text-cyan-600" />, duration: 3 },
-                            { icon: <SiPandas className="text-7xl text-gray-200" />, duration: 3.5 },
-                            { icon: <SiPowerbi className="text-7xl text-yellow-600" />, duration: 4 },
-                            { icon: <RiFileExcel2Fill className="text-7xl text-green-600" />, duration: 3.5 },
-                            { icon: <SiMysql className="text-7xl text-green-600" />, duration: 3 },
-                        ].map((item, index) => (
-                            <motion.div
-                                key={index}
-                                variants={iconVariants(item.duration)}
-                                initial="initial"
-                                animate="animate"
-                                className="rounded-2xl border-4 border-neutral-500 p-4">
-                                {item.icon}
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                </motion.div>
-
-                {/* Front-End Technologies Section */}
-                <motion.div className="rounded-xl hover:shadow-xl hover:shadow-cyan-900 hover:duration-200 bg-[#ffff]/10 p-4">
-                    <motion.h3
-                        whileInView={{ opacity: 1, y: 0 }}
-                        initial={{ opacity: 0, y: -100 }}
-                        transition={{ duration: 2 }}
-                        className="text-5xl my-6 p-2 font-bold bg-gradient-to-r from-red-600 to-indigo-400 inline-block text-transparent bg-clip-text">Front-End Technologies</motion.h3>
-                    <motion.div
-                        whileInView={{ opacity: 1, x: 0 }}
-                        initial={{ opacity: 0, x: 100 }}
-                        transition={{ duration: 1.5 }}
-                        className="flex flex-wrap items-center justify-center gap-4">
-                        {[
-                            { icon: <FaHtml5 className="text-7xl text-cyan-400" />, duration: 2.5 },
-                            { icon: <IoLogoCss3 className="text-7xl text-blue-800" />, duration: 3 },
-                            { icon: <IoLogoJavascript className="text-7xl text-red-600" />, duration: 4 },
-                            { icon: <RiReactjsLine className="text-7xl text-cyan-400" />, duration: 3 },
-                            { icon: <DiNodejs className="text-7xl text-green-500" />, duration: 2.5 },
-                            { icon: <SiMongodb className="text-7xl text-green-500" />, duration: 2.5 },
-                            { icon: <DiFirebase className="text-7xl text-orange-500" />, duration: 2.5 },
-                        ].map((item, index) => (
-                            <motion.div
-                                key={index}
-                                variants={iconVariants(item.duration)}
-                                initial="initial"
-                                animate="animate"
-                                className="rounded-2xl border-4 border-neutral-500 p-4">
-                                {item.icon}
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                </motion.div>
-
-                {/* IDE Section */}
-                <motion.div className="rounded-xl hover:shadow-xl hover:shadow-blue-900 hover:duration-200 bg-[#ffff]/10 p-4">
-                    <motion.h3
-                        whileInView={{ opacity: 1, y: 0 }}
-                        initial={{ opacity: 0, y: -100 }}
-                        transition={{ duration: 2 }}
-                        className="text-5xl my-6 p-2 font-bold bg-gradient-to-r from-blue-600 to-indigo-900 inline-block text-transparent bg-clip-text">IDE</motion.h3>
-                    <motion.div
-                        whileInView={{ opacity: 1, x: 0 }}
-                        initial={{ opacity: 0, x: 100 }}
-                        transition={{ duration: 1.5 }}
-                        className="flex flex-wrap items-center justify-center gap-4">
-                        {[
-                            { icon: <BiLogoVisualStudio className="text-7xl text-cyan-400" />, duration: 2.5 },
-                            { icon: <SiJupyter className="text-7xl text-orange-400" />, duration: 2.5 },
-                            { icon: <DiVisualstudio className="text-7xl text-fuchsia-500" />, duration: 2.5 },
-                        ].map((item, index) => (
-                            <motion.div
-                                key={index}
-                                variants={iconVariants(item.duration)}
-                                initial="initial"
-                                animate="animate"
-                                className="rounded-2xl border-4 border-neutral-500 p-4">
-                                {item.icon}
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                </motion.div>
-
-                {/* System Specification Section */}
-                <motion.div className="rounded-xl hover:shadow-xl hover:shadow-emerald-900 hover:duration-200 bg-[#ffff]/10 p-4">
-                    <motion.h3
-                        whileInView={{ opacity: 1, y: 0 }}
-                        initial={{ opacity: 0, y: -100 }}
-                        transition={{ duration: 2 }}
-                        className="text-5xl my-6 p-2 font-bold bg-gradient-to-r from-blue-600 to-indigo-900 inline-block text-transparent bg-clip-text">System Specification</motion.h3>
-                    <motion.div
-                        whileInView={{ opacity: 1, x: 0 }}
-                        initial={{ opacity: 0, x: 100 }}
-                        transition={{ duration: 1.5 }}
-                        className="gap-4">
-                        <ol className="text-center text-2xl">
-                            <li>System: Lenovo Ideapad S145/ Victus 15</li>
-                            <li>CPU: Ryzen 3200U/ Ryzen 5500</li>
-                            <li>RAM: 12GB/16GB</li>
-                            <li>Graphic: Ryzen Mobile Graphic/ Nvidia RTX 3050</li>
-                        </ol>
-                    </motion.div>
-                </motion.div>
-            </motion.div>
+const TechGroup = ({ className = "", icon: Icon, eyebrow, title, description, skills, compact = false }) => (
+    <motion.section
+        className={`tech-group ${className}`}
+        initial={{ opacity: 0, y: 22 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.12 }}
+        transition={{ duration: 0.5 }}
+    >
+        <div className="tech-group-heading">
+            <span className="tech-group-icon"><Icon size={19} aria-hidden="true" /></span>
+            <div>
+                <span className="tech-group-eyebrow">{eyebrow}</span>
+                <h2>{title}</h2>
+            </div>
         </div>
-    )
-}
+        <p className="tech-group-description">{description}</p>
+        <div className={`tech-skill-grid${compact ? " tech-skill-grid-compact" : ""}`}>
+            {skills.map((skill, index) => (
+                <SkillTile key={skill.name} skill={skill} index={index} compact={compact} />
+            ))}
+        </div>
+    </motion.section>
+);
+
+const Technologies = () => (
+    <main className="tech-page">
+        <motion.header
+            className="tech-hero"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65 }}
+        >
+            <div className="tech-hero-copy">
+                <span className="tech-hero-eyebrow">
+                    <Sparkles size={14} aria-hidden="true" />
+                    Tools I build with
+                </span>
+                <h1>Full Stack <span>Python</span><br />Technologies</h1>
+                <p>
+                    From backend logic and intelligent data tools to polished interfaces and production databases.
+                </p>
+            </div>
+            <div className="tech-hero-mark" aria-hidden="true">
+                <div className="tech-orbit tech-orbit-one" />
+                <div className="tech-orbit tech-orbit-two" />
+                <div className="tech-hero-core"><SiPython /></div>
+                <span className="tech-orbit-dot tech-orbit-dot-one" />
+                <span className="tech-orbit-dot tech-orbit-dot-two" />
+            </div>
+            <div className="tech-hero-footer">
+                <span><Layers3 size={15} aria-hidden="true" /> Full stack toolkit</span>
+                <span><Database size={15} aria-hidden="true" /> Four database systems</span>
+            </div>
+        </motion.header>
+
+        <div className="tech-groups">
+            <TechGroup
+                className="tech-group-python"
+                icon={Code2}
+                eyebrow="Core stack"
+                title="Python development"
+                description="Backend frameworks, API development, machine learning, and data tools — brought together in one Python ecosystem."
+                skills={pythonStack}
+            />
+            <TechGroup
+                className="tech-group-databases"
+                icon={Database}
+                eyebrow="Data layer"
+                title="Working databases"
+                description="Hands-on experience across relational and document databases."
+                skills={databases}
+                compact
+            />
+            <TechGroup
+                className="tech-group-frontend"
+                icon={Layers3}
+                eyebrow="User experience"
+                title="Frontend"
+                description="Building responsive interfaces that connect cleanly to the backend."
+                skills={frontendStack}
+                compact
+            />
+            <TechGroup
+                className="tech-group-tools"
+                icon={Sparkles}
+                eyebrow="Build & ship"
+                title="Developer tools"
+                description="Everyday tools for developing, testing, and shipping software."
+                skills={developerTools}
+                compact
+            />
+        </div>
+    </main>
+);
 
 export default Technologies;

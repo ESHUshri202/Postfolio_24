@@ -1,125 +1,212 @@
-import { PiPhoneCallFill } from "react-icons/pi";
-import { CONTACT } from "../constants";
-import { motion } from "framer-motion";
-import { ImLocation2 } from "react-icons/im";
-import { MdEmail } from "react-icons/md";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  ArrowDownRight,
+  ArrowUpRight,
+  Mail,
+  MapPin,
+  Phone,
+  Send,
+  Sparkles,
+} from "lucide-react";
+import { addDoc, collection } from "firebase/firestore";
+import { CONTACT } from "../constants";
 import { db } from "../firebase";
-import { collection, addDoc } from "firebase/firestore";
-import Snowfall from "react-snowfall";
+
+const initialFormData = {
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+};
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
+  const [formData, setFormData] = useState(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [success, setSuccess] = useState(null);
+  const [status, setStatus] = useState(null);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (event) => {
+    setStatus(null);
+    setFormData((current) => ({
+      ...current,
+      [event.target.name]: event.target.value,
+    }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     setIsSubmitting(true);
+    setStatus(null);
+
     try {
       await addDoc(collection(db, "contacts"), formData);
-      setSuccess("Message sent successfully!");
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormData(initialFormData);
+      setStatus({ type: "success", message: "Message sent. I’ll be in touch soon." });
     } catch (error) {
-      console.error("Error submitting form: ", error);
-      setSuccess("Failed to send message. Try again later.");
+      console.error("Error submitting contact form:", error);
+      setStatus({
+        type: "error",
+        message: "Your message couldn’t be sent. Please try again or email me directly.",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
-    setIsSubmitting(false);
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center p-6 md:p-12 lg:p-16 gap-6">
-    
-      <div className="w-full max-w-xl bg-[#ffff]/10 p-10 rounded-2xl font-[sans-serif]">
-        <h1 className="text-4xl text-blue-400 font-thin text-center">Contact Us</h1>
-        <form className="mt-8 space-y-4" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-transparent text-sm outline-blue-500"
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-transparent text-sm outline-blue-500"
-            required
-          />
-          <input
-            type="text"
-            name="subject"
-            placeholder="Subject"
-            value={formData.subject}
-            onChange={handleChange}
-            className="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-transparent text-sm outline-blue-500"
-            required
-          />
-          <textarea
-            name="message"
-            placeholder="Message"
-            rows="6"
-            value={formData.message}
-            onChange={handleChange}
-            className="w-full rounded-md px-4 text-gray-800 bg-gray-100 focus:bg-transparent text-sm pt-3 outline-blue-500"
-            required
-          ></textarea>
-          <button
-            type="submit"
-            className="text-white bg-blue-500 hover:bg-blue-600 tracking-wide rounded-md text-sm px-4 py-3 w-full"
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? "Submitting..." : "Submit"}
-          </button>
-          {success && <p className="text-center text-white mt-2">{success}</p>}
-        </form>
+    <main className="contact-page">
+      <motion.header
+        className="contact-hero"
+        initial={{ opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.65 }}
+      >
+        <span className="contact-eyebrow">
+          <Sparkles size={14} aria-hidden="true" />
+          Good things start with a conversation
+        </span>
+        <h1>Let’s build<br /><span>something meaningful.</span></h1>
+        <p>
+          Have an idea, an opportunity, or a challenge to solve? Tell me what you’re thinking.
+        </p>
+      </motion.header>
+
+      <div className="contact-layout">
+        <motion.section
+          className="contact-info"
+          initial={{ opacity: 0, x: -22 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          aria-labelledby="contact-details-heading"
+        >
+          <div className="contact-info-heading">
+            <span className="contact-info-kicker">The direct route</span>
+            <h2 id="contact-details-heading">Let’s turn your next idea into a real thing.</h2>
+            <p>
+              Whether you’re building something new or looking for the right person to join your team,
+              my inbox is open.
+            </p>
+          </div>
+
+          <div className="contact-detail-list">
+            <div className="contact-detail-card">
+              <span className="contact-detail-icon"><MapPin size={19} aria-hidden="true" /></span>
+              <div>
+                <span className="contact-detail-label">Based in</span>
+                <p>{CONTACT.address}</p>
+              </div>
+            </div>
+            <a className="contact-detail-card" href={`tel:${CONTACT.phoneNo.replace(/[^\d+]/g, "")}`}>
+              <span className="contact-detail-icon"><Phone size={19} aria-hidden="true" /></span>
+              <div>
+                <span className="contact-detail-label">Give me a call</span>
+                <p>{CONTACT.phoneNo}</p>
+              </div>
+              <ArrowUpRight className="contact-detail-arrow" size={17} aria-hidden="true" />
+            </a>
+            <a className="contact-detail-card" href={`mailto:${CONTACT.email}`}>
+              <span className="contact-detail-icon"><Mail size={19} aria-hidden="true" /></span>
+              <div>
+                <span className="contact-detail-label">Send an email</span>
+                <p>{CONTACT.email}</p>
+              </div>
+              <ArrowUpRight className="contact-detail-arrow" size={17} aria-hidden="true" />
+            </a>
+          </div>
+
+          <div className="contact-note">
+            <span className="contact-note-dot" aria-hidden="true" />
+            <span>Usually replies within 1–2 working days</span>
+            <ArrowDownRight size={16} aria-hidden="true" />
+          </div>
+        </motion.section>
+
+        <motion.section
+          className="contact-form-card"
+          initial={{ opacity: 0, x: 22 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.08 }}
+          aria-labelledby="contact-form-heading"
+        >
+          <div className="contact-form-heading">
+            <span className="contact-form-icon"><Send size={17} aria-hidden="true" /></span>
+            <div>
+              <span className="contact-info-kicker">Start here</span>
+              <h2 id="contact-form-heading">Send me a message</h2>
+            </div>
+            <span className="contact-form-step">01 / 01</span>
+          </div>
+
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <div className="contact-form-row">
+              <label>
+                <span>Your name</span>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Jane Smith"
+                  autoComplete="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+              </label>
+              <label>
+                <span>Email address</span>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="jane@example.com"
+                  autoComplete="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </label>
+            </div>
+            <label>
+              <span>What’s this about?</span>
+              <input
+                type="text"
+                name="subject"
+                placeholder="Project, opportunity, or just saying hello"
+                value={formData.subject}
+                onChange={handleChange}
+                required
+              />
+            </label>
+            <label>
+              <span>A little more detail</span>
+              <textarea
+                name="message"
+                placeholder="Tell me a bit about what you have in mind..."
+                rows={5}
+                value={formData.message}
+                onChange={handleChange}
+                required
+              />
+            </label>
+
+            {status && (
+              <p
+                className={`contact-form-status contact-form-status-${status.type}`}
+                role={status.type === "error" ? "alert" : "status"}
+              >
+                {status.message}
+              </p>
+            )}
+
+            <button className="contact-submit" type="submit" disabled={isSubmitting}>
+              <span>{isSubmitting ? "Sending your message…" : "Send message"}</span>
+              <Send size={16} aria-hidden="true" />
+            </button>
+            <p className="contact-form-footnote">Your details are only used to reply to your message.</p>
+          </form>
+        </motion.section>
       </div>
-      <div className="grid grid-cols-1 gap-4 w-full max-w-xl text-center md:text-left">
-        <motion.p
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col md:flex-row gap-4 items-center my-4 text-xl md:text-2xl lg:text-3xl"
-        >
-          <ImLocation2 className="text-white" />
-          {CONTACT.address}
-        </motion.p>
-        <motion.p
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col md:flex-row gap-4 items-center my-4 text-xl md:text-2xl lg:text-3xl"
-        >
-          <PiPhoneCallFill className="text-white" />
-          {CONTACT.phoneNo}
-        </motion.p>
-        <motion.a
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: 100 }}
-          transition={{ duration: 0.5 }}
-          href={`mailto:${CONTACT.email}`}
-          className="flex flex-col md:flex-row gap-4 justify-center md:justify-start items-center text-xl md:text-2xl lg:text-3xl italic"
-        >
-          <MdEmail className="text-white" />
-          {CONTACT.email}
-        </motion.a>
-      </div>
-    </div>
+    </main>
   );
 };
 

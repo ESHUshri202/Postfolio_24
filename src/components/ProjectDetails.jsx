@@ -1,138 +1,278 @@
-
-import { useParams, Link } from 'react-router-dom';
-import projects from './projectsData';
-import { FaArrowRight } from "react-icons/fa";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from 'react';
-
-gsap.registerPlugin(ScrollTrigger);
-
-const recommendations = {
-    React: ["Medical Recommendation System", "Feast of Flavours", "Netflix Clone", "Mamba AI"],
-    Python: ["Medical Recommendation System", "Medico-Brain Stroke Prediction", "Dog & Cat Classification", "Smart Attendance System"],
-    "Machine Learning": ["Medical Recommendation System", "Medico-Brain Stroke Prediction", "Stock Price Prediction Model"],
-    Flask: ["Medical Recommendation System", "Medico-Brain Stroke Prediction"],
-    Django: ["Medical Recommendation System", "Medico-Brain Stroke Prediction"],
-    "Tailwind CSS": ["Feast of Flavours", "Company X Template", "Netflix Clone"],
-    // Add more technologies and their recommendations as needed
-};
+import { motion } from "framer-motion";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Layers3, Sparkles } from "lucide-react";
+import { Link, useParams } from "react-router-dom";
+import projects from "./projectsData";
 
 const ProjectDetails = () => {
-    const { title } = useParams();
-    const decodedTitle = decodeURIComponent(title);
-    const project = projects.find(p => p.title === decodedTitle);
+  const { title = "" } = useParams();
+  const decodedTitle = decodeURIComponent(title);
+  const project = projects.find((item) => item.title === decodedTitle);
 
-    if (!project) {
-        return (
-            <div className="text-center text-white p-10">
-                <h1 className="text-3xl font-bold mb-4">Project Not Found</h1>
-                <Link to="/" className="text-blue-400 underline">Go Back</Link>
-            </div>
-        );
-    }
-
-    var count = 1;
+  if (!project) {
     return (
-        <>
-            <div className="p-6 max-w-4xl mx-auto text-white">
-                <div className='p-4 mb-8 rounded-full w-[20%] sm:w-[12%] md:w-[10%] lg:w-[7%] text-2xl bg-white/10 transition-transform duration-700 hover:rotate-[-180deg]'>
-                    <Link to="/project">
-                        <FaArrowRight />
-                    </Link>
-                </div>
-                <img src={project.image} alt={project.title} className="w-full h-60 sm:h-72 md:h-80 object-cover rounded-xl mb-6 shadow-xl" />
-                <h1 className="text-3xl sm:text-4xl font-bold mb-4">{project.title}</h1>
-                <h1 className='text-xl sm:text-2xl p-2 mb-4'>Overview Of Project</h1>
-                <h2 className='p-2 mb-4'>{project.OverView}</h2>
-                {project.ListDown && project.ListDown.length > 0 && (
-                    <ol className='pl-6 mb-4'>
-                        {project.ListDown.map((item, index) => (
-                            <li key={item.id} className=''><span>{count++}. </span> {item.content}</li>
-                        ))}
-                    </ol>
-                )}
-                {
-                    project.keyFeatures && (
-                        <>
-                            <h1 className='text-2xl sm:text-3xl mb-4 pt-6 '>Key Features</h1>
-                            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6 w-full items-center justify-center'>
-                                {project.keyFeatures.map((tech) => (
-                                    <span key={tech} className="p-4 text-center text-lg sm:text-2xl rounded-2xl h-full shadow-lg shadow-slate-800 bg-gradient-to-r from-green-900 to-indigo-900 hover:bg-gradient-to-r hover:from-black hover:to-blue-800 hover:duration-200 h-full">
-                                        {tech}
-                                    </span>
-                                ))}
-                            </div>
-                        </>
-                    )
-                }
-                {project.systemArchitecture && (
-                    <div className='text-wrap'>
-                        <h1 className="p-2 text-2xl sm:text-3xl">System Architecture</h1>
-                        <span className='pt-6 pb-6 m-2 flex flex-wrap text-[18px] sm:text-[22px] bg-gradient-to-r from-slate-900 to-slate-700 text-center justify-center rounded-xl'>{project.systemArchitecture}</span>
-                    </div>
-                )}
-                <div>
-                    {project.analysis && (
-                        <img src={project.analysis} alt={project.title} className="w-full h-auto object-cover rounded-sm mb-6 shadow-xl" />
-                    )}
-                </div>
-                {project.trends && (
-                    <div>
-                        <h1 className='text-xl sm:text-2xl p-2 mb-4'>💹 Trends </h1>
-                        <span>{project.trends}</span>
-                    </div>
-                )}
-                <br />
-                <div className='p-2'>
-                    {
-                        project.techStack && (
-                            <>
-                                <h1 className='text-2xl sm:text-3xl mb-4 pt-6 '>Technologies Used</h1>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6 w-full items-center justify-center">
-                                    {project.techStack.map((tech) => (
-                                        <span key={tech} className="p-8 text-center flex flex-wrap justify-center text-lg sm:text-2xl rounded-2xl shadow-lg shadow-slate-800 bg-gradient-to-r from-slate-900 to-indigo-900 hover:bg-gradient-to-r hover:from-red-800 hover:to-blue-800 hover:duration-200 h-full">
-                                            {tech}
-                                        </span>
-                                    ))}
-                                </div>
-                            </>
-                        )
-                    }
-                </div>
-                {project.projectLink !== "#" && (
-                    <a
-                        href={project.projectLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block bg-green-600 px-4 sm:px-5 py-2 rounded-xl text-white font-semibold hover:bg-green-700 transition"
-                    >
-                        View Project
-                    </a>
-                )}
-                <div className='mt-10'>
-                    <h1 className='text-2xl sm:text-3xl mb-4'>Recommended Projects</h1>
-                    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
-                        {project.techStack && project.techStack.map((tech) => (
-                            recommendations[tech] ? recommendations[tech].map((recommendedProject) => (
-                                <div
-                                    key={recommendedProject}
-                                    className="bg-slate-900 shadow-md rounded-xl p-4 hover:shadow-lg transition"
-                                >
-                                    <Link
-                                        to={`/project/${encodeURIComponent(recommendedProject)}`}
-                                        className="text-lg text-blue-200 flex flex-wrap text-center jutify-center  hover:text-blue-700"
-                                    >
-                                        {recommendedProject}
-                                    </Link>
-                                </div>
-                            )) : null
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </>
+      <main className="project-detail-page">
+        <section className="project-not-found">
+          <span className="project-detail-eyebrow">Project archive</span>
+          <h1>That project isn’t in the archive.</h1>
+          <p>It may have moved, or the link may be out of date.</p>
+          <Link className="project-back-link" to="/project">
+            <ArrowLeft size={16} aria-hidden="true" />
+            Back to all projects
+          </Link>
+        </section>
+      </main>
     );
+  }
+
+  const relatedProjects = projects
+    .filter((item) => item.title !== project.title)
+    .map((item) => ({
+      ...item,
+      overlap: (item.techStack || []).filter((technology) => (project.techStack || []).includes(technology)).length,
+    }))
+    .filter((item) => item.overlap > 0)
+    .sort((first, second) => second.overlap - first.overlap)
+    .slice(0, 3);
+
+  const architectureSteps = project.systemArchitecture
+    ? project.systemArchitecture.split(/\s*→\s*/)
+    : [];
+
+  return (
+    <main className="project-detail-page">
+      <nav className="project-detail-breadcrumb" aria-label="Breadcrumb">
+        <Link to="/project">
+          <ArrowLeft size={15} aria-hidden="true" />
+          All projects
+        </Link>
+        <span aria-hidden="true">/</span>
+        <span>{project.title}</span>
+      </nav>
+
+      <motion.header
+        className="project-detail-hero"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="project-detail-hero-copy">
+          <span className="project-detail-eyebrow">
+            <Sparkles size={14} aria-hidden="true" />
+            Project overview
+          </span>
+          <h1>{project.title}</h1>
+          <p className="project-detail-summary">{project.details}</p>
+          <div className="project-detail-hero-actions">
+            {project.projectLink && project.projectLink !== "#" && (
+              <a
+                className="project-detail-primary"
+                href={project.projectLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore live project
+                <ArrowUpRight size={17} aria-hidden="true" />
+              </a>
+            )}
+            <Link className="project-detail-secondary" to="/project">
+              Browse more work
+            </Link>
+          </div>
+          {project.techStack?.length > 0 && (
+            <div className="project-detail-tech-chips" aria-label="Technology stack">
+              {project.techStack.map((technology) => (
+                <span key={technology}>{technology}</span>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <div className="project-detail-visual">
+          <img src={project.image} alt={`${project.title} preview`} />
+          <div className="project-detail-visual-caption">
+            <span>Featured project</span>
+            <Layers3 size={17} aria-hidden="true" />
+          </div>
+          <span className="project-detail-visual-glow" aria-hidden="true" />
+        </div>
+      </motion.header>
+
+      <div className="project-detail-content">
+        <motion.section
+          className="project-detail-overview"
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.45 }}
+        >
+          <div className="project-section-label">
+            <span>01</span>
+            <span>The idea</span>
+          </div>
+          <div>
+            <h2>About the project</h2>
+            <p>{project.OverView || project.details}</p>
+          </div>
+        </motion.section>
+
+        {project.keyFeatures?.length > 0 && (
+          <motion.section
+            className="project-detail-section"
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.45 }}
+          >
+            <div className="project-section-heading">
+              <div className="project-section-label">
+                <span>02</span>
+                <span>Highlights</span>
+              </div>
+              <h2>What it brings</h2>
+            </div>
+            <div className="project-feature-grid">
+              {project.keyFeatures.map((feature, index) => (
+                <article className="project-feature-card" key={feature}>
+                  <span className="project-feature-number">{String(index + 1).padStart(2, "0")}</span>
+                  <span className="project-feature-check"><Check size={15} aria-hidden="true" /></span>
+                  <h3>{feature}</h3>
+                </article>
+              ))}
+            </div>
+          </motion.section>
+        )}
+
+        {architectureSteps.length > 0 && (
+          <motion.section
+            className="project-detail-section project-architecture"
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.45 }}
+          >
+            <div className="project-section-heading">
+              <div className="project-section-label">
+                <span>03</span>
+                <span>Under the hood</span>
+              </div>
+              <h2>How it works</h2>
+            </div>
+            <div className="project-architecture-flow">
+              {architectureSteps.map((step, index) => (
+                <div className="project-architecture-step" key={`${step}-${index}`}>
+                  <span className="project-architecture-index">{String(index + 1).padStart(2, "0")}</span>
+                  <span>{step}</span>
+                  {index < architectureSteps.length - 1 && (
+                    <ArrowRight className="project-architecture-arrow" size={17} aria-hidden="true" />
+                  )}
+                </div>
+              ))}
+            </div>
+          </motion.section>
+        )}
+
+        {project.ListDown?.length > 0 && (
+          <motion.section
+            className="project-detail-section project-capabilities"
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.45 }}
+          >
+            <div className="project-section-heading">
+              <div className="project-section-label">
+                <span>04</span>
+                <span>Capabilities</span>
+              </div>
+              <h2>Made to do more</h2>
+            </div>
+            <ul>
+              {project.ListDown.map((item) => (
+                <li key={item.id}>
+                  <Check size={15} aria-hidden="true" />
+                  <span>{item.content}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.section>
+        )}
+
+        {project.analysis && (
+          <motion.figure
+            className="project-detail-analysis"
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.45 }}
+          >
+            <img src={project.analysis} alt={`${project.title} analysis`} loading="lazy" />
+          </motion.figure>
+        )}
+
+        {project.trends && (
+          <section className="project-detail-section">
+            <div className="project-section-heading">
+              <div className="project-section-label">
+                <span>05</span>
+                <span>Insights</span>
+              </div>
+              <h2>Trends</h2>
+            </div>
+            <p className="project-detail-prose">{project.trends}</p>
+          </section>
+        )}
+
+        {project.benefits?.length > 0 && (
+          <motion.section
+            className="project-detail-benefits"
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.45 }}
+          >
+            <div className="project-section-label">
+              <span>06</span>
+              <span>Why it matters</span>
+            </div>
+            <h2>Built for real-world impact.</h2>
+            <div className="project-benefit-list">
+              {project.benefits.map((benefit) => (
+                <span key={benefit}><Check size={15} aria-hidden="true" />{benefit}</span>
+              ))}
+            </div>
+            {project.conclusion && <p>{project.conclusion}</p>}
+          </motion.section>
+        )}
+
+        {relatedProjects.length > 0 && (
+          <section className="project-detail-related">
+            <div className="project-section-heading">
+              <div className="project-section-label">
+                <span>07</span>
+                <span>Keep exploring</span>
+              </div>
+              <h2>Related projects</h2>
+            </div>
+            <div className="project-related-grid">
+              {relatedProjects.map((related) => (
+                <Link
+                  className="project-related-card"
+                  key={related.title}
+                  to={`/project/${encodeURIComponent(related.title)}`}
+                >
+                  <div>
+                    <span>{related.techStack?.slice(0, 2).join(" · ")}</span>
+                    <h3>{related.title}</h3>
+                  </div>
+                  <ArrowUpRight size={18} aria-hidden="true" />
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+    </main>
+  );
 };
 
 export default ProjectDetails;
